@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "694955718440",
+    "firebase_url": "https://clothing-app-for-mad.firebaseio.com",
+    "project_id": "clothing-app-for-mad",
+    "storage_bucket": "clothing-app-for-mad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694955718440:android:c313c7e503df0a6e",
+        "android_client_info": {
+          "package_name": "com.example.clothing_app_mad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694955718440-5absoemuv2pii985mmccjl8qcu1opsqo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.clothing_app_mad",
+            "certificate_hash": "8638dd68d836acbd67d34bab130e79e4ca260dcd"
+          }
+        },
+        {
+          "client_id": "694955718440-na6kunmk7p60gk5bq8vm2569ggpe9thj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf6Nw8vTey5PFyYgnGQZpHywnqnZbTIX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694955718440-na6kunmk7p60gk5bq8vm2569ggpe9thj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
