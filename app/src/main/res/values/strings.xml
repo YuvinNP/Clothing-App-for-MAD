@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Clothing-App-MAD</string>
+    <string name="login">Login</string>
+    <string name="loginCapslocak">L O G I N</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="loginAsASeller">Login as a Seller</string>
+    <string name="loginAsAUser">Login as a User</string>
+    <string name="donthaveanAccount">Don\'t have an account?</string>
+    <string name="signIn">Sign In</string>
 </resources>
