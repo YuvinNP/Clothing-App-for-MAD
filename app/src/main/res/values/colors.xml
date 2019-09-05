@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#006BF7</color>
     <color name="GradientBlue">#006BF7</color>
 
+=======
+    <color name="colorPrimary"> #003cb3</color>
+    <color name="colorPrimaryDark">#000099</color>
+    <color name="colorAccent">#0055ff</color>
+>>>>>>> e90aacd40a2eb2a3c0cf7ef17c93ba75277435a8
 </resources>

@@ -9,8 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".UserRegister"></activity>
         <activity android:name=".Login">
+=======
+        <activity android:name=".SupplierAddNewProductActivity"></activity>
+        <activity
+            android:name=".NavDrawer"
+            android:label="@string/title_activity_nav_drawer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainActivity">
+>>>>>>> e90aacd40a2eb2a3c0cf7ef17c93ba75277435a8
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
