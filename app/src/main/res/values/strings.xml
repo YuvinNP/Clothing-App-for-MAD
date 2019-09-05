@@ -1,15 +1,24 @@
 <resources>
+
     <string name="app_name">Clothing-App-MAD</string>
-<<<<<<< HEAD
     <string name="login">Login</string>
-    <string name="loginCapslocak">L O G I N</string>
     <string name="email">Email</string>
+    <string name="loginCapslocak">L O G I N</string>
     <string name="password">Password</string>
     <string name="loginAsASeller">Login as a Seller</string>
     <string name="loginAsAUser">Login as a User</string>
     <string name="donthaveanAccount">Don\'t have an account?</string>
+    <string name="allreadyAmember">Already a member?</string>
     <string name="signIn">Sign In</string>
-=======
+    <string name="signUp">Sign Up</string>
+    <string name="createAccount">Create Account</string>
+
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="contact">Contact No</string>
+    <string name="createpwrd">Create Password</string>
+    <string name="confirmpwrd">Confirm Password</string>
+
     <string name="title_activity_nav_drawer">NavDrawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -24,5 +33,5 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
->>>>>>> e90aacd40a2eb2a3c0cf7ef17c93ba75277435a8
+
 </resources>
