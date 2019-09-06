@@ -171,7 +171,11 @@
                         android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
+<<<<<<< HEAD
                         android:layout_marginStart="70dp"
+=======
+                        android:layout_marginStart="60dp"
+>>>>>>> 6e89ab04ce9f463edc4895209b8c0fe023e318aa
                         android:layout_marginLeft="110dp"
                         android:fontFamily="@font/fredokaoneregular"
                         android:text="@string/allreadyAmember"
@@ -183,7 +187,11 @@
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
+<<<<<<< HEAD
                         android:layout_marginRight="90dp"
+=======
+                        android:layout_marginRight="75dp"
+>>>>>>> 6e89ab04ce9f463edc4895209b8c0fe023e318aa
                         android:fontFamily="@font/fredokaoneregular"
                         android:text="@string/signIn"
                         android:textColor="@color/GradientBlue"
