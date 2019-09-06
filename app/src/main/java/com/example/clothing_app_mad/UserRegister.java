@@ -22,7 +22,7 @@ public class UserRegister extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(UserRegister.this, Login.class);
+                Intent intent = new Intent(UserRegister.this, MainActivity.class);
                 startActivity(intent);
             }
         });
