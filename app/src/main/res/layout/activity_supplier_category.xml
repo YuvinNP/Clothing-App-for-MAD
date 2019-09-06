@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SupplierCategoryActivity">
+
+    <TextView
+        android:id="@+id/topic_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Add New Product"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/linear1_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topic_category"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/female_dresses"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/female_skirts"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/female_blouses"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear1_category"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/female_trousers"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/female_jumpSuits"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/female_sarees"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear3_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear2_category"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/gents_shirts"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/gents_trousers"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/gents_tshirts"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear4_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear3_category"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/girl_dresses"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/girl_skirts"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/girl_tshirts"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear5_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear4_category"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/boy_tshirts"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/boy_trousers"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/boy_clothingSets"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear6_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear5_category"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/ladies_hats"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/ladies_socks"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/hair_accessories"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear7_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear6_category"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/men_caps"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/men_socks"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1" />
+
+        <ImageView
+            android:id="@+id/tie"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:src="@drawable/d1"/>
+
+    </LinearLayout>
+</RelativeLayout>
