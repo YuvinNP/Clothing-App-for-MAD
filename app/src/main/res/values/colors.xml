@@ -2,8 +2,11 @@
 <resources>
 
     <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#006BF7</color>
+    <color name="colorPrimaryDark">#595959</color>
+    <color name="colorAccent">#FFFFFF</color>
     <color name="GradientBlue">#006BF7</color>
+    <color name="formBlue">#006BF7</color>
+    <color name="formGray">#4B4B4B</color>
+
 
 </resources>
