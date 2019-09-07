@@ -52,7 +52,7 @@ public class Login extends AppCompatActivity {
                 progressDialog.setTitle("Please Wait");
                 progressDialog.setMessage("You are logging to the system");
                 progressDialog.show();
-                Intent intent = new Intent(Login.this, UserRegister.class);
+                Intent intent = new Intent(Login.this, SupplierCategoryActivity.class);
                 startActivity(intent);
                 progressDialog.dismiss();
 
