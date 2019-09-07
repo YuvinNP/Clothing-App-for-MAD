@@ -10,8 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 <RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/formback">
     <!--<LinearLayout-->
         <!--android:id="@+id/loginback"-->
         <!--android:layout_width="match_parent"-->
@@ -45,8 +46,8 @@
     <LinearLayout
         android:id="@+id/form_layout"
         android:layout_width="match_parent"
-        android:layout_height="288dp"
-        android:layout_marginTop="150dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="170dp"
         android:orientation="vertical"
         android:focusableInTouchMode="true">
 
@@ -60,8 +61,8 @@
             android:layout_marginTop="5dp"
             android:fontFamily="@font/manjariregular"
             android:text="@string/login"
-            android:textColor="@color/GradientBlue"
-            android:textSize="30sp" />
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="36sp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -69,9 +70,10 @@
             android:layout_height="29dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/fredokaoneregular"
             android:text="@string/email"
-            android:textColor="@color/GradientBlue"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="18sp" />
 
         <EditText
@@ -94,7 +96,7 @@
             android:layout_marginRight="30dp"
             android:fontFamily="@font/fredokaoneregular"
             android:text="@string/password"
-            android:textColor="@color/GradientBlue"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="18sp" />
 
         <EditText
@@ -114,7 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:background="@color/GradientBlue"
             android:fontFamily="@font/fredokaoneregular"
@@ -153,7 +155,7 @@
         android:layout_marginLeft="50dp"
         android:fontFamily="@font/fredokaoneregular"
         android:text="@string/loginAsASeller"
-        android:textColor="@color/GradientBlue"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="18sp" />
 
 
@@ -162,7 +164,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loginas"
-        android:layout_marginTop="40dp">
+
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -170,6 +175,7 @@
             android:layout_marginTop="40dp"
             android:orientation="horizontal">
 
+<<<<<<< HEAD
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="210dp"
@@ -193,7 +199,39 @@
                 android:text="@string/signUp"
                 android:textColor="@color/GradientBlue"/>
         </LinearLayout>
+=======
+
+        <TextView
+            android:id="@+id/loginast1"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="85dp"
+            android:fontFamily="@font/fredokaoneregular"
+            android:text="@string/donthaveanAccount"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/loginast2"
+            android:layout_width="140dp"
+            android:layout_toEndOf="@id/loginast1"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:fontFamily="@font/fredokaoneregular"
+            android:text="@string/signUp"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="18sp" />
+
+
+
+        </RelativeLayout>
+
+
+>>>>>>> a4e76e10aaebf67c57162bf87cab26b913e5f123
     </LinearLayout>
+
+
 </RelativeLayout>
 </ScrollView>
 </RelativeLayout>

@@ -6,6 +6,8 @@ public class Customer {
 
     private String cname;
 
+    private String email;
+
     private int contactNo;
 
     private String password;
@@ -31,6 +33,14 @@ public class Customer {
 
     public int getContactNo() {
         return contactNo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setContactNo(int contactNo) {

@@ -7,13 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
 
-    TextView sellerLink, userLink;
+    TextView sellerLink, userLink, loginast1, loginast2;
     Button loginBtn;
     ProgressDialog progressDialog;
+    LinearLayout loginAs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,9 @@ public class Login extends AppCompatActivity {
         loginBtn = findViewById(R.id.singupbtn);
         sellerLink = findViewById(R.id.login_as_seller);
         userLink = findViewById(R.id.login_as_user);
+        loginAs = findViewById(R.id.loginas);
+        loginast1 = findViewById(R.id.loginast1);
+        loginast2 = findViewById(R.id.loginast2);
 
         progressDialog = new ProgressDialog(Login.this);
 
@@ -56,6 +61,24 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
                 progressDialog.dismiss();
 
+
+            }
+        });
+
+        loginast1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this, UserRegister.class);
+                startActivity(intent);
+
+            }
+        });
+
+        loginast2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this, UserRegister.class);
+                startActivity(intent);
 
             }
         });
