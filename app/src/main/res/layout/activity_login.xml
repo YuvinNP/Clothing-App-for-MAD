@@ -58,6 +58,7 @@
             android:layout_height="57dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="40dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/manjariregular"
             android:text="@string/login"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
@@ -163,8 +164,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loginas"
+
         android:layout_marginTop="30dp"
         android:orientation="horizontal">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
 
 
         <TextView
@@ -180,15 +189,23 @@
 
         <TextView
             android:id="@+id/loginast2"
-            android:layout_width="80dp"
+            android:layout_width="140dp"
+            android:layout_toEndOf="@id/loginast1"
             android:layout_height="wrap_content"
-            android:layout_marginRight="60dp"
+            android:layout_marginRight="40dp"
             android:fontFamily="@font/fredokaoneregular"
             android:text="@string/signUp"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="18sp" />
 
+
+
+        </RelativeLayout>
+
+
     </LinearLayout>
+
+
 </RelativeLayout>
 </ScrollView>
 </RelativeLayout>

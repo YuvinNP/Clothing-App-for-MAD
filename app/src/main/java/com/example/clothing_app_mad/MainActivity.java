@@ -2,6 +2,7 @@ package com.example.clothing_app_mad;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
