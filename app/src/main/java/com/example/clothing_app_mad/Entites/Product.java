@@ -2,26 +2,33 @@ package com.example.clothing_app_mad.Entites;
 
 public class Product {
 
-    private String pname, description, price, image, category, pid, date, time;
+    private String pid, pname, description, price, image, category,  date, time;
 
     public Product(){
 
     }
 
-    public Product(String pname, String description, String price, String image, String category, String pid, String date, String time) {
+    public Product(String pid, String pname, String description, String price, String image, String category, String date, String time) {
+
+        this.pid = pid;
         this.pname = pname;
         this.description = description;
         this.price = price;
         this.image = image;
         this.category = category;
-        this.pid = pid;
         this.date = date;
         this.time = time;
     }
 
-    public String getPname() {
-        return pname;
+    public String getPid() {
+        return pid;
     }
+
+    public void setPid(String pid) {
+        this.pid = pid;
+    }
+
+    public String getPname() { return pname; }
 
     public void setPname(String pname) {
         this.pname = pname;
@@ -57,14 +64,6 @@ public class Product {
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public String getPid() {
-        return pid;
-    }
-
-    public void setPid(String pid) {
-        this.pid = pid;
     }
 
     public String getDate() {

@@ -11,37 +11,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ProductDetailsActivity"></activity>
+        <activity android:name=".SettingActivity" />
         <activity
             android:name=".BottomNav"
             android:label="@string/title_activity_bottom_nav">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        <activity android:name=".SupplierCategoryActivity"></activity>
-
-        <activity android:name=".SupplierAddNewProductActivity" />
-
-
-        <activity android:name=".UserRegister"></activity>
-        <activity android:name=".Login">
 
         </activity>
-        <activity android:name=".ChangeProfile" />
+            <activity android:name=".SupplierCategoryActivity" />
+            <activity android:name=".SupplierAddNewProductActivity" />
+            <activity android:name=".UserRegister" />
+            <activity android:name=".Login">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
 
-
-        </activity>
-
-
-
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+            <activity android:name=".ChangeProfile" />
 
         <activity
             android:name=".NavDrawer"
             android:label="@string/title_activity_nav_drawer"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+
         <activity android:name=".MainActivity" />
     </application>
 

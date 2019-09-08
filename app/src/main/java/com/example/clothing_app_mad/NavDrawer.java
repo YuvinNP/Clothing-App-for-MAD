@@ -5,14 +5,18 @@ import android.os.Bundle;
 
 import com.example.clothing_app_mad.Entites.Product;
 import com.example.clothing_app_mad.Prevalent.Prevalent;
+import com.example.clothing_app_mad.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.provider.ContactsContract;
+import android.text.Layout;
+import android.view.LayoutInflater;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
@@ -21,31 +25,39 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import io.paperdb.Paper;
 
 public class NavDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private DatabaseReference ProductRef;
+    private RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
 
-        /*ProductRef = FirebaseDatabase.getInstance().child("Product");*/
+        ProductRef = FirebaseDatabase.getInstance().getReference().child("Product");
 
-//        paper.init.(this);
+       Paper.init(this);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("NavDrawer");
         setSupportActionBar(toolbar);
 
@@ -58,13 +70,13 @@ public class NavDrawer extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         View headerView = navigationView.getHeaderView(0);
@@ -72,16 +84,53 @@ public class NavDrawer extends AppCompatActivity
         CircleImageView profImageView = headerView.findViewById(R.id.user_image);
 
         userNameTextView.setText(Prevalent.currentOnlineUser.getCname());
+
+        recyclerView = findViewById(R.id.recycler_menu);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-      /*  FirebaseRecyclerOptions<Product> options =
-                new FirebaseRecyclerOptions.Builder<Product>()
-                        .setQuery(ProductRef, Product.class);
-        .build();*/
+       FirebaseRecyclerOptions<Product> options =
+                new FirebaseRecyclerOptions.Builder<Product>().setQuery(ProductRef, Product.class).build();
+
+       FirebaseRecyclerAdapter<Product, ProductViewHolder> adapter =
+                new FirebaseRecyclerAdapter<Product, ProductViewHolder>(options) {
+                    @Override
+                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Product Entites) {
+
+                        holder.txtProductName.setText(Entites.getPname());
+                        holder.txtProductDescription.setText(Entites.getDescription());
+                        holder.txtProductPrice.setText("Price = Rs." + Entites.getPrice());
+                        Picasso.get().load(Entites.getImage()).into(holder.imageView);
+
+                        holder.itemView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                                Intent intent = new Intent(NavDrawer.this, ProductDetailsActivity.class);
+                                intent.putExtra("pid", Entites.getPid());
+                                startActivity(intent);
+
+                            }
+                        });
+
+                    }
+
+                    @NonNull
+                    @Override
+                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_items, parent, false);
+                        ProductViewHolder holder = new ProductViewHolder(view);
+                        return holder;
+                    }
+                };
+
     }
 
     @Override
@@ -94,7 +143,6 @@ public class NavDrawer extends AppCompatActivity
         }
     }
 
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.nav_drawer, menu);
@@ -103,6 +151,7 @@ public class NavDrawer extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
 
         int id = item.getItemId();
 
@@ -134,7 +183,8 @@ public class NavDrawer extends AppCompatActivity
         }
         else if (id == R.id.nav_setting)
         {
-
+            Intent intent = new Intent(NavDrawer.this, SettingActivity.class);
+            startActivity(intent);
         }
         else if (id == R.id.nav_logout)
         {
