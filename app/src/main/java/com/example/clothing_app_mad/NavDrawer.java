@@ -83,7 +83,7 @@ public class NavDrawer extends AppCompatActivity
         TextView userNameTextView = headerView.findViewById(R.id.user_name);
         CircleImageView profImageView = headerView.findViewById(R.id.user_image);
 
-        userNameTextView.setText(Prevalent.currentOnlineUser.getCname());
+//        userNameTextView.setText(Prevalent.currentOnlineUser.getCname());
 
         recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
@@ -100,6 +100,7 @@ public class NavDrawer extends AppCompatActivity
 
        FirebaseRecyclerAdapter<Product, ProductViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Product, ProductViewHolder>(options) {
+
                     @Override
                     protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Product Entites) {
 
@@ -130,7 +131,8 @@ public class NavDrawer extends AppCompatActivity
                         return holder;
                     }
                 };
-
+            recyclerView.setAdapter(adapter);
+            adapter.startListening();
     }
 
     @Override
