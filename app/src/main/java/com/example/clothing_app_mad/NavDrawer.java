@@ -91,6 +91,8 @@ public class NavDrawer extends AppCompatActivity
         recyclerView.setLayoutManager(layoutManager);
     }
 
+
+    //to retrive items from the db
     @Override
     protected void onStart() {
         super.onStart();
