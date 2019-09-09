@@ -18,6 +18,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.clothing_app_mad.Entites.Customer;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,6 +38,8 @@ public class UserRegister extends AppCompatActivity {
     private ProgressDialog progressbar;
     String currentCustomerID;
 
+    private FirebaseAuth firebaseAuth;
+
 
     int count = 0;
 
@@ -41,6 +47,8 @@ public class UserRegister extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_register);
+
+        firebaseAuth = FirebaseAuth.getInstance();
 
         backBtn = findViewById(R.id.backBtnR);
         signupBtn = findViewById(R.id.singupbtn);
@@ -127,32 +135,53 @@ public class UserRegister extends AppCompatActivity {
                 progressbar.show();
 
 
-                count++;
-                String cid = "C0" + count;
-
-                customer.setCname(name.getText().toString().trim());
-                customer.setEmail(email.getText().toString().trim());
-                customer.setContactNo(Integer.parseInt(contactno.getText().toString().trim()));
-                customer.setPassword(crpwrd.getText().toString().trim());
 
 
-                dbref.child(cid).setValue(customer);
+                //firebase registration of user
+                (firebaseAuth.createUserWithEmailAndPassword(email.getText().toString(), crpwrd.getText().toString()))
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
 
-                Runnable progressRunnable = new Runnable() {
+                                progressbar.dismiss();
 
-                    @Override
-                    public void run() {
-                        progressbar.cancel();
-                    }
-                };
+                                if(task.isSuccessful()){
 
-                Handler phandler = new Handler();
-                phandler.postDelayed(progressRunnable, 3000);
+                                    count++;
+                                    String cid = "C0" + count;
+
+                                    customer.setCname(name.getText().toString().trim());
+                                    customer.setEmail(email.getText().toString().trim());
+                                    customer.setContactNo(Integer.parseInt(contactno.getText().toString().trim()));
+                                    customer.setPassword(crpwrd.getText().toString().trim());
+                                    dbref.child(cid).setValue(customer);
+
+                                    Toast.makeText(getApplicationContext(), "Registration Successfull", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(UserRegister.this, NavDrawer.class);
+                                    startActivity(intent);
+                                }
+                                else {
+                                    Log.e("ERROR", task.getException().toString());
+                                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
 
 
-                Toast.makeText(getApplicationContext(), "Registration Successfull", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(UserRegister.this, BottomNav.class);
-                startActivity(intent);
+//
+//                Runnable progressRunnable = new Runnable() {
+//
+//                    @Override
+//                    public void run() {
+//                        progressbar.cancel();
+//                    }
+//                };
+//
+//                Handler phandler = new Handler();
+//                phandler.postDelayed(progressRunnable, 3000);
+
+
+
 
 
             } else {

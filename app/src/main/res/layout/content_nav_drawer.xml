@@ -1,16 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".NavDrawer"
+    android:orientation="vertical"
     tools:showIn="@layout/app_bar_nav_drawer">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_menu"
+    <!--<include layout="@layout/custom_actionbar"/>-->
+    <!--<androidx.recyclerview.widget.RecyclerView-->
+        <!--android:id="@+id/recycler_menu"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:scrollbars="vertical">-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/customToolbar"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/Toolbar">
+
+        <!--<SearchView-->
+        <!--android:layout_width="250dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--/>-->
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <!--</androidx.recyclerview.widget.RecyclerView>-->
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+<<<<<<< HEAD
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/Toolbar"
+        app:tabTextColor="@color/colorAccent">
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+
+
+
+    </androidx.viewpager.widget.ViewPager>
+</LinearLayout>
+=======
         android:layout_height="match_parent"
         android:scrollbars="vertical">
 
@@ -29,3 +76,4 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 </RelativeLayout>
+>>>>>>> a7317dfb8875498eed8fab8a8d50b110c10106f1

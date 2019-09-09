@@ -1,6 +1,7 @@
 package com.example.clothing_app_mad;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.example.clothing_app_mad.Entites.Product;
@@ -23,14 +24,24 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+<<<<<<< HEAD
+import com.google.android.material.tabs.TabLayout;
+=======
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
+>>>>>>> a7317dfb8875498eed8fab8a8d50b110c10106f1
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+<<<<<<< HEAD
+import androidx.viewpager.widget.ViewPager;
+
+import android.view.Menu;
+import android.widget.TableLayout;
+=======
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -40,9 +51,11 @@ import android.widget.TextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
+>>>>>>> a7317dfb8875498eed8fab8a8d50b110c10106f1
 
 public class NavDrawer extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, All_items.OnFragmentInteractionListener, Gents.OnFragmentInteractionListener, Kids.OnFragmentInteractionListener
+{
 
     private DatabaseReference ProductRef;
     private RecyclerView recyclerView;
@@ -53,12 +66,51 @@ public class NavDrawer extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
 
+<<<<<<< HEAD
+        TabLayout tabLayout = findViewById(R.id.tablayout);
+        tabLayout.addTab(tabLayout.newTab().setText("All"));
+        tabLayout.addTab(tabLayout.newTab().setText("Gents"));
+        tabLayout.addTab(tabLayout.newTab().setText("Ladies"));
+        tabLayout.addTab(tabLayout.newTab().setText("Kids"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        final ViewPager viewPager = findViewById(R.id.viewpager);
+
+        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+        viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+
+//        paper.init.(this);
+
+        Toolbar toolbar = findViewById(R.id.customToolbar);
+        toolbar.setTitle("Home");
+=======
         ProductRef = FirebaseDatabase.getInstance().getReference().child("Product");
 
        Paper.init(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("NavDrawer");
+>>>>>>> a7317dfb8875498eed8fab8a8d50b110c10106f1
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -204,5 +256,10 @@ public class NavDrawer extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#008577</color>
+    <!--<color name="colorPrimary">#008577</color>-->
+    <color name="colorPrimary">#FFFFFF</color>
+    <!--<color name="colorPrimaryDark">#595959</color>-->
     <color name="colorPrimaryDark">#595959</color>
-    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorAccent">#595959</color>
     <color name="GradientBlue">#006BF7</color>
     <color name="formBlue">#006BF7</color>
     <color name="formGray">#4B4B4B</color>

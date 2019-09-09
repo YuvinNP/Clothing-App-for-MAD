@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ChangeProfile extends AppCompatActivity {
+public class UpdateCustomer extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_profile);
+        setContentView(R.layout.activity_update_customer);
     }
 }
-
