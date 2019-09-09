@@ -6,16 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".SupplierAddNewProductActivity">
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/txtView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Add New Product"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:textStyle="bold"/>
+
     <ImageView
         android:id="@+id/productImage"
-        android:layout_width="350dp"
-        android:layout_height="211dp"
-        android:background="@android:color/black"
+        android:layout_width="300dp"
+        android:layout_height="230dp"
         android:cropToPadding="false"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_menu_camera"
+        android:src="@drawable/ic_camera"
+        android:layout_below="@+id/txtView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="50dp"/>
 
     <EditText
         android:id="@+id/productName"
@@ -23,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/productImage"
         android:inputType="textMultiLine"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:padding="20dp"
         android:hint="Enter Product Name"
         android:layout_marginLeft="45dp"
@@ -58,9 +77,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Product"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
         android:padding="17dp"
         android:layout_below="@+id/productPrice"
         />
+</RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

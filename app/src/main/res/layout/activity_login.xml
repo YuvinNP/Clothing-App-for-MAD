@@ -61,7 +61,7 @@
             android:layout_marginRight="40dp"
             android:fontFamily="@font/manjariregular"
             android:text="@string/login"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@android:color/background_light"
             android:textSize="36sp" />
 
         <TextView
@@ -69,11 +69,11 @@
             android:layout_width="match_parent"
             android:layout_height="29dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
             android:fontFamily="@font/fredokaoneregular"
             android:text="@string/email"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@android:color/background_light"
             android:textSize="18sp" />
 
         <EditText
@@ -97,7 +97,7 @@
             android:layout_marginRight="30dp"
             android:fontFamily="@font/fredokaoneregular"
             android:text="@string/password"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@android:color/background_light"
             android:textSize="18sp" />
 
         <EditText
@@ -134,9 +134,8 @@
             android:layout_marginRight="30dp"
             android:background="@color/GradientBlue"
             android:fontFamily="@font/fredokaoneregular"
-            android:shadowColor="@color/common_google_signin_btn_text_light_default"
             android:text="@string/loginCapslocak"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@android:color/background_light"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -170,7 +169,7 @@
         android:layout_marginLeft="50dp"
         android:fontFamily="@font/fredokaoneregular"
         android:text="@string/loginAsASeller"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColor="@android:color/background_light"
         android:textSize="18sp" />
 
 
@@ -191,6 +190,7 @@
             android:orientation="horizontal">
 
 
+<<<<<<< HEAD
         <TextView
             android:id="@+id/loginast1"
             android:layout_width="280dp"
@@ -212,11 +212,37 @@
             <!--android:text="@string/signUp"-->
             <!--android:textColor="@color/common_google_signin_btn_text_dark_default"-->
             <!--android:textSize="18sp" />-->
+=======
+
+>>>>>>> a7317dfb8875498eed8fab8a8d50b110c10106f1
+
+
+
+    <TextView
+        android:id="@+id/loginast1"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="85dp"
+        android:fontFamily="@font/fredokaoneregular"
+        android:text="@string/donthaveanAccount"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/loginast2"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:layout_toEndOf="@id/loginast1"
+        android:fontFamily="@font/fredokaoneregular"
+        android:text="@string/signUp"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp" />
 
 
 
         </RelativeLayout>
-
 
     </LinearLayout>
 

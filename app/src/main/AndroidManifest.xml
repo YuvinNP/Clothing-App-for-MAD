@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".UpdateCustomer"></activity>
         <activity android:name=".ResetPassword" />
         <activity android:name=".SupplierCategoryActivity" />
@@ -29,6 +30,38 @@
             android:label="@string/home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity" />
+=======
+        <activity android:name=".ProductDetailsActivity"></activity>
+        <activity android:name=".SettingActivity" />
+        <activity
+            android:name=".BottomNav"
+            android:label="@string/title_activity_bottom_nav">
+
+        </activity>
+            <activity android:name=".SupplierCategoryActivity" />
+            <activity android:name=".SupplierAddNewProductActivity" />
+            <activity android:name=".UserRegister" />
+            <activity android:name=".Login">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+            <activity android:name=".ChangeProfile" />
+
+        <activity
+            android:name=".NavDrawer"
+            android:label="@string/title_activity_nav_drawer"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+
+        <activity android:name=".MainActivity" >
+
+        </activity>
+>>>>>>> a7317dfb8875498eed8fab8a8d50b110c10106f1
     </application>
 
 </manifest>
