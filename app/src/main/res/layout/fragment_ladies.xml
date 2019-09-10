@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="100dp"
-                android:text="Gents"
+                android:text="Ladies"
                 android:textColor="@android:color/white"
                 android:textSize="34dp" />
 
@@ -35,7 +35,7 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="6"
+            android:layout_weight="5"
             android:alignmentMode="alignMargins"
             android:columnCount="2"
             android:columnOrderPreserved="false"
@@ -62,7 +62,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView"
+                        android:id="@+id/fDresses"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -90,7 +90,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView1"
+                        android:id="@+id/fTops"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -118,7 +118,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/fSkirts"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -146,7 +146,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView3"
+                        android:id="@+id/fTrousers"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"

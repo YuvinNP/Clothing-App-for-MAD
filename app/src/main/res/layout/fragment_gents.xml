@@ -36,7 +36,7 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="6"
+        android:layout_weight="5"
         android:alignmentMode="alignMargins"
         android:columnCount="2"
         android:columnOrderPreserved="false"
@@ -63,7 +63,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/mShirts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -91,7 +91,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView1"
+                    android:id="@+id/mTshirts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -119,7 +119,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/mTrousers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -147,7 +147,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/mShorts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
