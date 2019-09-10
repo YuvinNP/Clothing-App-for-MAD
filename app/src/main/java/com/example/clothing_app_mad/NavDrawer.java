@@ -24,24 +24,23 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
-<<<<<<< HEAD
 import com.google.android.material.tabs.TabLayout;
-=======
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
->>>>>>> a7317dfb8875498eed8fab8a8d50b110c10106f1
+
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-<<<<<<< HEAD
+
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.Menu;
 import android.widget.TableLayout;
-=======
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,22 +50,22 @@ import android.widget.TextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
->>>>>>> a7317dfb8875498eed8fab8a8d50b110c10106f1
+
 
 public class NavDrawer extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, All_items.OnFragmentInteractionListener, Gents.OnFragmentInteractionListener, Kids.OnFragmentInteractionListener
+        implements NavigationView.OnNavigationItemSelectedListener, Ladies.OnFragmentInteractionListener ,All_items.OnFragmentInteractionListener, Gents.OnFragmentInteractionListener, Kids.OnFragmentInteractionListener
 {
 
-    private DatabaseReference ProductRef;
+   /* private DatabaseReference ProductRef;
     private RecyclerView recyclerView;
-    RecyclerView.LayoutManager layoutManager;
+    RecyclerView.LayoutManager layoutManager;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
 
-<<<<<<< HEAD
+
         TabLayout tabLayout = findViewById(R.id.tablayout);
         tabLayout.addTab(tabLayout.newTab().setText("All"));
         tabLayout.addTab(tabLayout.newTab().setText("Gents"));
@@ -103,14 +102,14 @@ public class NavDrawer extends AppCompatActivity
 
         Toolbar toolbar = findViewById(R.id.customToolbar);
         toolbar.setTitle("Home");
-=======
-        ProductRef = FirebaseDatabase.getInstance().getReference().child("Product");
+
+        /*ProductRef = FirebaseDatabase.getInstance().getReference().child("Product");*/
 
        Paper.init(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("NavDrawer");
->>>>>>> a7317dfb8875498eed8fab8a8d50b110c10106f1
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        toolbar.setTitle("NavDrawer");
+
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -137,15 +136,15 @@ public class NavDrawer extends AppCompatActivity
 
 //        userNameTextView.setText(Prevalent.currentOnlineUser.getCname());
 
-        recyclerView = findViewById(R.id.recycler_menu);
-        recyclerView.setHasFixedSize(true);
+//        recyclerView = findViewById(R.id.recycler_menu);
+        /*recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(layoutManager);*/
     }
 
 
     //to retrive items from the db
-    @Override
+ /*   @Override
     protected void onStart() {
         super.onStart();
 
@@ -187,7 +186,7 @@ public class NavDrawer extends AppCompatActivity
                 };
             recyclerView.setAdapter(adapter);
             adapter.startListening();
-    }
+    }*/
 
     @Override
     public void onBackPressed() {

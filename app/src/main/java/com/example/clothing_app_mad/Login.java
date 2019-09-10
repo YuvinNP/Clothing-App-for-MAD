@@ -82,7 +82,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-<<<<<<< HEAD
+
                 userLogin();
 
 //                progressDialog.setTitle("Please Wait");
@@ -90,13 +90,13 @@ public class Login extends AppCompatActivity {
 //                progressDialog.show();
 //                Intent intent = new Intent(Login.this, UserRegister.class);
 //                startActivity(intent);
-=======
+
 //                progressDialog.setTitle("Please Wait");
 //                progressDialog.setMessage("You are logging to the system");
 //                progressDialog.show();
                 Intent intent = new Intent(Login.this, NavDrawer.class);
                 startActivity(intent);
->>>>>>> a7317dfb8875498eed8fab8a8d50b110c10106f1
+
 //                progressDialog.dismiss();
 
 

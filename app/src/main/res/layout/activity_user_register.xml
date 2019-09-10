@@ -110,16 +110,11 @@
                     android:drawableStart="@drawable/phone"
                     android:ems="10"
                     android:fontFamily="@font/fredokaoneregular"
-<<<<<<< HEAD
+
                     android:inputType="phone"
                     android:textColor="@color/common_google_signin_btn_text_dark_default"
                     />
 
-
-=======
-                    android:inputType="textPersonName"
-                    android:textColor="@android:color/background_light" />
->>>>>>> a7317dfb8875498eed8fab8a8d50b110c10106f1
 
                 <TextView
                     android:id="@+id/textView11"

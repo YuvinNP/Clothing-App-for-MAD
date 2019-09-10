@@ -9,23 +9,23 @@
     <string name="loginAsAUser">Login as a User</string>
     <string name="donthaveanAccount">Don\'t have an account? Sign Up</string>
     <string name="allreadyAmember">Already a member?</string>
-<<<<<<< HEAD
+
     <string name="forgotPassword">Forgot Password</string>
-=======
->>>>>>> a7317dfb8875498eed8fab8a8d50b110c10106f1
+
+
     <string name="allreadyAmembersignIn">Already a member? Sign In</string>
     <string name="signIn">Sign In</string>
     <string name="signUp">Sign Up</string>
     <string name="createAccount">Create Account</string>
     <string name="joinnow">Join Now</string>
-<<<<<<< HEAD
+
     <string name="resetPassword">Reset Password</string>
     <string name="reset">Reset</string>
     <string name="updateprofile">Update Profile</string>
 
     <string name="home">Home</string>
-=======
->>>>>>> a7317dfb8875498eed8fab8a8d50b110c10106f1
+
+
 
     <string name="name">Name</string>
     <string name="address">Address</string>
