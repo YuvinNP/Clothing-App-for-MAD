@@ -21,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="10dp">
 
 
                 <Button
@@ -41,14 +41,14 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="40dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical"
                 android:focusableInTouchMode="true"
                 android:layout_below="@id/backBtn">
 
                 <TextView
                     android:id="@+id/textView4"
-                    android:layout_width="150dp"
+                    android:layout_width="220dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/manjariregular"
                     android:text="@string/createAccount"
@@ -59,7 +59,7 @@
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="@font/fredokaoneregular"
                     android:text="@string/name"
                     android:textColor="@android:color/background_light"
@@ -116,6 +116,53 @@
                     />
 
 
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/registerlayout"
+                    android:fontFamily="@font/fredokaoneregular"
+                    android:text="@string/address"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/address1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/registerlayout"
+                    android:drawableStart="@drawable/location"
+                    android:ems="10"
+                    android:fontFamily="@font/fredokaoneregular"
+                    android:hint="@string/address1"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorText" />
+
+                <EditText
+                    android:id="@+id/address2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/registerlayout"
+                    android:drawableStart="@drawable/location"
+                    android:ems="10"
+                    android:fontFamily="@font/fredokaoneregular"
+                    android:hint="@string/address2"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorText" />
+
+                <EditText
+                    android:id="@+id/address3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/registerlayout"
+                    android:drawableStart="@drawable/location"
+                    android:ems="10"
+                    android:fontFamily="@font/fredokaoneregular"
+                    android:hint="@string/address3"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorText" />
+>>>>>>> Stashed changes
                 <TextView
                     android:id="@+id/textView11"
                     android:layout_width="match_parent"
@@ -124,6 +171,8 @@
                     android:text="@string/createpwrd"
                     android:textColor="@android:color/background_light"
                     android:textSize="18sp" />
+
+
 
                 <EditText
                     android:id="@+id/crpwrd"
@@ -214,7 +263,7 @@
                     android:layout_marginLeft="110dp"
                     android:fontFamily="@font/fredokaoneregular"
                     android:text="@string/allreadyAmember"
-                    android:textColor="@android:color/background_light"
+                    android:textColor="@color/GradientBlue"
                     android:textSize="18sp" />
 
 
@@ -227,7 +276,7 @@
                     android:layout_toEndOf="@+id/textView8"
                     android:fontFamily="@font/fredokaoneregular"
                     android:text="@string/signIn"
-                    android:textColor="@android:color/background_light"
+                    android:textColor="@color/GradientBlue"
                     android:textSize="18sp" />
 
             </RelativeLayout>

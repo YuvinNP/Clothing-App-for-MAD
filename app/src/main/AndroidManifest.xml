@@ -25,42 +25,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".ChangeProfile" />
-        <activity
-            android:name=".NavDrawer"
-            android:label="@string/home"
-            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <activity android:name=".NavDrawer" android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity" />
 
         <activity android:name=".ProductDetailsActivity"></activity>
         <activity android:name=".SettingActivity" />
-       <!-- <activity
-            android:name=".BottomNav"
-            android:label="@string/title_activity_bottom_nav">
 
-        </activity>-->
-           <!-- <activity android:name=".SupplierCategoryActivity" />
-            <activity android:name=".SupplierAddNewProductActivity" />
-            <activity android:name=".UserRegister" />
-            <activity android:name=".Login">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
-
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
-            </activity>-->
-          <!--  <activity android:name=".ChangeProfile" />-->
-
-        <!--<activity
-            android:name=".NavDrawer"
-            android:label="@string/title_activity_nav_drawer"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
--->
-
-      <!--  <activity android:name=".MainActivity" >-->
-
-      <!--  </activity>-->
     </application>
 
 </manifest>

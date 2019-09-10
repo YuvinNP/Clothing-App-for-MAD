@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChangeProfile">
+    tools:context="com.example.clothing_app_mad.ChangeProfile">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

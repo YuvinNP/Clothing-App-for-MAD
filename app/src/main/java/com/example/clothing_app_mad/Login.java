@@ -15,10 +15,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.clothing_app_mad.Entites.Customer;
+import com.example.clothing_app_mad.Prevalent.Prevalent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
 
@@ -28,6 +35,8 @@ public class Login extends AppCompatActivity {
     private LinearLayout loginAs;
     private EditText emailValidate, pwrdValidate;
     private FirebaseAuth mAuth;
+    private String parentDbName = "Customer";
+    private Customer customerData;
 
     private FirebaseAuth.AuthStateListener mAuthListner;
     @Override
@@ -66,6 +75,7 @@ public class Login extends AppCompatActivity {
                 loginBtn.setText("LOGIN AS A SELLER");
                 sellerLink.setVisibility(View.INVISIBLE);
                 userLink.setVisibility(View.VISIBLE);
+                parentDbName = "";
             }
         });
 
@@ -75,29 +85,18 @@ public class Login extends AppCompatActivity {
                 loginBtn.setText("L O G I N");
                 userLink.setVisibility(View.INVISIBLE);
                 sellerLink.setVisibility(View.VISIBLE);
+                parentDbName = "Customer";
             }
         });
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                passCustomer (emailValidate.getText ().toString (), pwrdValidate.getText ().toString ());
+            userLogin();
 
+              //  AllowAccessToAccount (emailValidate.getText ().toString (), pwrdValidate.getText ().toString ());
 
-                userLogin();
-
-//                progressDialog.setTitle("Please Wait");
-//                progressDialog.setMessage("You are logging to the system");
-//                progressDialog.show();
-//                Intent intent = new Intent(Login.this, UserRegister.class);
-//                startActivity(intent);
-
-//                progressDialog.setTitle("Please Wait");
-//                progressDialog.setMessage("You are logging to the system");
-//                progressDialog.show();
-                Intent intent = new Intent(Login.this, NavDrawer.class);
-                startActivity(intent);
-
-//                progressDialog.dismiss();
 
 
             }
@@ -120,8 +119,36 @@ public class Login extends AppCompatActivity {
 
             }
         });
+
+
     }
 
+//    public void passCustomer(final String email, final String password){
+//
+//        final DatabaseReference dbref;
+//        dbref = FirebaseDatabase.getInstance ().getReference ();
+//
+//        dbref.addListenerForSingleValueEvent (new ValueEventListener () {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//
+//                if(dataSnapshot.child (parentDbName).child (email).exists ()){
+//
+//                    customerData = dataSnapshot.child (parentDbName).child (password).getValue (Customer.class);
+//                    System.out.println ("CUSTOMER DATA: " + customerData );
+//                    Prevalent.currentOnlineUser = customerData;
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+
+
+
+//    }
     public void userLogin(){
 
         final String uname = emailValidate.getText().toString();
@@ -145,10 +172,16 @@ public class Login extends AppCompatActivity {
                             progressDialog.dismiss();
                             Toast.makeText(Login.this, "Signed In", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(Login.this, NavDrawer.class);
+//                            intent.putExtra ("username", uname);
+                            System.out.println (customerData + "\n\n\n");
+                            Prevalent.currentOnlineUser = customerData;
                             startActivity(intent);
                         }
                         else {
+                            progressDialog.dismiss ();
                             Toast.makeText(Login.this, "Sign In failed!!!", Toast.LENGTH_LONG).show();
+                            emailValidate.setText ("");
+                            pwrdValidate.setText ("");
                         }
                     }
                 });
@@ -161,4 +194,6 @@ public class Login extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Please your username of password is missed.", Toast.LENGTH_LONG).show();
         }
     }
+
+
 }

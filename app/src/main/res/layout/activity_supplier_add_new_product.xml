@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SupplierAddNewProductActivity">
+    tools:context="com.example.clothing_app_mad.SupplierAddNewProductActivity">
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -29,12 +29,12 @@
         android:id="@+id/productImage"
         android:layout_width="300dp"
         android:layout_height="230dp"
-        android:cropToPadding="false"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_camera"
         android:layout_below="@+id/txtView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="50dp"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_camera" />
 
     <EditText
         android:id="@+id/productName"

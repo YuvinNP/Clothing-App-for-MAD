@@ -32,7 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 public class UserRegister extends AppCompatActivity {
 
     private Button backBtn, signupBtn;
-    private EditText name, email, contactno, crpwrd, cnpwrd;
+    private EditText name, email, contactno, crpwrd, cnpwrd, addressLine1, addressLine2, addressLine3;
     private DatabaseReference dbref, childCountDb;
 
     Customer customer;
@@ -58,6 +58,9 @@ public class UserRegister extends AppCompatActivity {
         contactno = findViewById(R.id.contactNo);
         crpwrd = findViewById(R.id.crpwrd);
         cnpwrd = findViewById(R.id.confpwrd);
+        addressLine1 = findViewById (R.id.address1);
+        addressLine2 = findViewById (R.id.address2);
+        addressLine3 = findViewById (R.id.address3);
 
         childCountDb = FirebaseDatabase.getInstance().getReference().child("Customer");
 
@@ -87,7 +90,7 @@ public class UserRegister extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                count = 0;
 
-                for (DataSnapshot ds : dataSnapshot.getChildren()){
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
 
                     count++;
                 }
@@ -111,29 +114,42 @@ public class UserRegister extends AppCompatActivity {
 
         try {
 
-            if (TextUtils.isEmpty(name.getText().toString())) {
-                Toast.makeText(getApplicationContext(), "Please Enter the name", Toast.LENGTH_SHORT).show();
-            } else if (TextUtils.isEmpty(email.getText().toString())) {
-                Toast.makeText(getApplicationContext(), "Enter the email", Toast.LENGTH_LONG).show();
-            } else if (TextUtils.isEmpty(contactno.getText().toString())) {
-                Toast.makeText(getApplicationContext(), "Enter Contact no", Toast.LENGTH_LONG).show();
-            } else if (TextUtils.isEmpty(cnpwrd.getText().toString())) {
-                Toast.makeText(getApplicationContext(), "Enter Your Password", Toast.LENGTH_LONG);
+            if (TextUtils.isEmpty (name.getText ().toString ())) {
+                Toast.makeText (getApplicationContext (), "Please Enter the name", Toast.LENGTH_SHORT).show ();
+            } else if (TextUtils.isEmpty (email.getText ().toString ())) {
+                Toast.makeText (getApplicationContext (), "Enter the email", Toast.LENGTH_LONG).show ();
+            } else if (TextUtils.isEmpty (contactno.getText ().toString ())) {
+                Toast.makeText (getApplicationContext (), "Enter Contact no", Toast.LENGTH_LONG).show ();
+            } else if (TextUtils.isEmpty (cnpwrd.getText ().toString ())) {
+                Toast.makeText (getApplicationContext (), "Enter Your Password", Toast.LENGTH_LONG);
 
-                if (TextUtils.isEmpty(crpwrd.getText().toString())) {
+                if (TextUtils.isEmpty (crpwrd.getText ().toString ())) {
 
-                    Toast.makeText(getApplicationContext(), "Confirm Your Password", Toast.LENGTH_LONG).show();
+                    Toast.makeText (getApplicationContext (), "Confirm Your Password", Toast.LENGTH_LONG).show ();
                 }
-            } else if (TextUtils.isEmpty(crpwrd.getText().toString())) {
+            } else if (TextUtils.isEmpty (crpwrd.getText ().toString ())) {
 
-                Toast.makeText(getApplicationContext(), "Confirm Your Password", Toast.LENGTH_LONG).show();
-            } else if (crpwrd.getText().toString().equals(cnpwrd.getText().toString())) {
+                Toast.makeText (getApplicationContext (), "Confirm Your Password", Toast.LENGTH_LONG).show ();
+            } else if (TextUtils.isEmpty (addressLine1.getText ().toString ())) {
+
+                Toast.makeText (getApplicationContext (), "Fill Address Line 1", Toast.LENGTH_LONG).show ();
+
+            } else if (TextUtils.isEmpty (addressLine2.getText ().toString ())) {
+
+                Toast.makeText (getApplicationContext (), "Fill Address Line 2", Toast.LENGTH_LONG).show ();
+
+            }else if(TextUtils.isEmpty (addressLine3.getText ().toString ())){
+
+                Toast.makeText (getApplicationContext (), "Enter District", Toast.LENGTH_LONG).show ();
+
+            }else if (crpwrd.getText().toString().equals(cnpwrd.getText().toString())) {
 
 
                 progressbar.setTitle("Add Customer");
                 progressbar.setMessage("Please wait, you are registering to the system");
                 progressbar.setCanceledOnTouchOutside(false);
                 progressbar.show();
+
 
 
 
@@ -155,7 +171,10 @@ public class UserRegister extends AppCompatActivity {
                                     customer.setEmail(email.getText().toString().trim());
                                     customer.setContactNo(Integer.parseInt(contactno.getText().toString().trim()));
                                     customer.setPassword(crpwrd.getText().toString().trim());
-                                    dbref.child(cid).setValue(customer);
+                                    customer.setAddressLine1 (addressLine1.getText ().toString ().trim ());
+                                    customer.setAddressLine2 (addressLine2.getText ().toString ().trim ());
+                                    customer.setDistrict (addressLine3.getText ().toString ().trim ());
+                                    dbref.child(contactno.getText ().toString ()).setValue(customer);
 
                                     Toast.makeText(getApplicationContext(), "Registration Successfull", Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(UserRegister.this, NavDrawer.class);
@@ -193,6 +212,7 @@ public class UserRegister extends AppCompatActivity {
         }
 
     }
+
 
 
 
