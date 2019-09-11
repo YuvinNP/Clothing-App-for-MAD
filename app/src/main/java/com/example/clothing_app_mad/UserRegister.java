@@ -174,7 +174,7 @@ public class UserRegister extends AppCompatActivity {
                                     customer.setAddressLine1 (addressLine1.getText ().toString ().trim ());
                                     customer.setAddressLine2 (addressLine2.getText ().toString ().trim ());
                                     customer.setDistrict (addressLine3.getText ().toString ().trim ());
-                                    dbref.child(contactno.getText ().toString ()).setValue(customer);
+                                    dbref.child(email.getText ().toString ()).setValue(customer);
 
                                     Toast.makeText(getApplicationContext(), "Registration Successfull", Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(UserRegister.this, NavDrawer.class);
