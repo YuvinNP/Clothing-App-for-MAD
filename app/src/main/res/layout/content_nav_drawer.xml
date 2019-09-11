@@ -21,7 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:theme="@style/Toolbar">
+        android:theme="@style/Toolbar"
+        app:popupTheme="@style/Theme.AppCompat.Light">
 
         <!--<SearchView-->
         <!--android:layout_width="250dp"-->
@@ -37,13 +38,7 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
-
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/Toolbar"
-        app:tabTextColor="@color/colorAccent">
-
+        android:layout_height="wrap_content">
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -57,5 +52,4 @@
 
     </androidx.viewpager.widget.ViewPager>
 </LinearLayout>
-
 

@@ -25,6 +25,9 @@
 
     <string name="home">Home</string>
 
+    <string name="address1">Address Line 1</string>
+    <string name="address2">Address Line 2</string>
+    <string name="address3">District</string>
 
 
     <string name="name">Name</string>

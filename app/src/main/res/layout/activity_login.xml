@@ -72,7 +72,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:fontFamily="@font/fredokaoneregular"
-            android:text="@string/email"
+            android:text="@string/contact"
             android:textColor="@android:color/background_light"
             android:textSize="18sp" />
 
@@ -203,42 +203,7 @@
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp" />
 
-        <!--<TextView-->
-            <!--android:id="@+id/loginast2"-->
-            <!--android:layout_width="140dp"-->
-            <!--android:layout_toEndOf="@id/loginast1"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginRight="40dp"-->
-            <!--android:fontFamily="@font/fredokaoneregular"-->
-            <!--android:text="@string/signUp"-->
-            <!--android:textColor="@color/common_google_signin_btn_text_dark_default"-->
-            <!--android:textSize="18sp" />-->
 
-
-
-            <TextView
-                android:id="@+id/loginast1"
-                android:layout_width="210dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="60dp"
-                android:layout_marginLeft="85dp"
-                android:layout_marginBottom="0dp"
-                android:fontFamily="@font/fredokaoneregular"
-                android:text="@string/donthaveanAccount"
-                android:textColor="@android:color/background_light"
-                android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/loginast2"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="40dp"
-        android:layout_toEndOf="@id/loginast1"
-        android:fontFamily="@font/fredokaoneregular"
-        android:text="@string/signUp"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp" />
 
 
 
