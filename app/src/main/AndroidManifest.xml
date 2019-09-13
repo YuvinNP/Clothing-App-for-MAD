@@ -36,6 +36,8 @@
 
         <activity android:name=".ProductDetailsActivity"></activity>
         <activity android:name=".SettingActivity" />
+        <activity android:name=".Ladies_Dresses" />
+
 
     </application>
 

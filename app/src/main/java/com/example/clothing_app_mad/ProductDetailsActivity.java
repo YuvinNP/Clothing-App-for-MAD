@@ -1,16 +1,21 @@
 package com.example.clothing_app_mad;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.clothing_app_mad.Entites.Product;
 import com.example.clothing_app_mad.Prevalent.Prevalent;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -57,33 +62,55 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
     }
 
-    private void addingToCartList(){
+    private void addingToCartList() {
 
         String saveCurrentTime, saveCurrentDate;
 
         Calendar calForDate = Calendar.getInstance();
 
-        SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
-        saveCurrentDate = currentDate.format(calForDate.getTime());
+        SimpleDateFormat currentDate = new SimpleDateFormat( "MMM dd, yyyy" );
+        saveCurrentDate = currentDate.format( calForDate.getTime() );
 
-        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-        saveCurrentTime = currentDate.format(calForDate.getTime());
+        SimpleDateFormat currentTime = new SimpleDateFormat( "HH:mm:ss a" );
+        saveCurrentTime = currentDate.format( calForDate.getTime() );
 
-        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
+        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child( "Cart List" );
 
         final HashMap<String, Object> cartMap = new HashMap<>();
-        cartMap.put("pid", productID);
-        cartMap.put("pname", productName.getText().toString());
-        cartMap.put("price", productPrice.getText().toString());
-        cartMap.put("date", saveCurrentDate);
-        cartMap.put("time", saveCurrentTime);
-        cartMap.put("quantity", numberButton.getNumber());
-        cartMap.put("discount", "");
+        cartMap.put( "pid", productID );
+        cartMap.put( "pname", productName.getText().toString() );
+        cartMap.put( "price", productPrice.getText().toString() );
+        cartMap.put( "date", saveCurrentDate );
+        cartMap.put( "time", saveCurrentTime );
+        cartMap.put( "quantity", numberButton.getNumber() );
+        cartMap.put( "discount", "" );
 
-        //cartListRef.child("User View").child(Prevalent.currentOnlineUser.getEmail()
-        // .child("Product").child(productID)
-        // .updateChildren(cartMap)
-        //.addOnCompleteListner(new OnCompleteListner<void>(){
+        cartListRef.child( "User view" ).child( Prevalent.currentOnlineUser.getCname() )
+                .child( "Product" ).child( productID )
+                .updateChildren( cartMap )
+                .addOnCompleteListener( new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task)
+                    {
+                        if(task.isSuccessful()){
+
+                            cartListRef.child( "Seller view" ).child( Prevalent.currentOnlineUser.getCname())
+                                    .child( "Product" ).child( productID )
+                                    .updateChildren( cartMap )
+                                    .addOnCompleteListener( new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()){
+                                                Toast.makeText( ProductDetailsActivity.this, "Added to Cart List Successfully", Toast.LENGTH_SHORT ).show();
+
+                                                Intent intent = new Intent(ProductDetailsActivity.this, NavDrawer.class);
+                                                startActivity(intent);
+                                            }
+                                        }
+                                    } );
+                        }
+                    }
+                } );
     }
 
     private void getProductDetails(String ProductID){
