@@ -57,8 +57,8 @@
 
                 <ImageView
                     android:id="@+id/productImage"
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
                     android:layout_marginLeft="60dp"
                     android:background="@android:color/black"
                     android:cropToPadding="false"
@@ -126,12 +126,49 @@
                     android:textColor="@color/common_google_signin_btn_text_dark_default"
                     />
 
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/fredokaoneregular"
+                    android:text="@string/name"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/updateAddress1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/location"
+                    android:ems="10"
+                    android:fontFamily="@font/fredokaoneregular"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default" />
+                <EditText
+                    android:id="@+id/updateAddress2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/location"
+                    android:ems="10"
+                    android:fontFamily="@font/fredokaoneregular"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default" />
+                <EditText
+                    android:id="@+id/updateAddress3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/location"
+                    android:ems="10"
+                    android:fontFamily="@font/fredokaoneregular"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
 
                 <Button
                     android:id="@+id/singupbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="10dp"
                     android:background="@color/GradientBlue"
                     android:fontFamily="@font/fredokaoneregular"
                     android:shadowColor="@color/common_google_signin_btn_text_light_default"

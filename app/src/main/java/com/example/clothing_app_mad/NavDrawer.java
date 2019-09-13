@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.example.clothing_app_mad.Entites.Customer;
 import com.example.clothing_app_mad.Entites.Product;
 
 import com.example.clothing_app_mad.Prevalent.Prevalent;
@@ -28,6 +29,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import com.google.android.material.tabs.TabLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -55,6 +57,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import io.paperdb.Paper;
 
 
 public class NavDrawer extends AppCompatActivity
@@ -65,6 +68,7 @@ public class NavDrawer extends AppCompatActivity
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     private TextView usernametxt;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,53 +147,19 @@ public class NavDrawer extends AppCompatActivity
 
         View headerView = navigationView.getHeaderView (0);
         TextView userNameTextView = headerView.findViewById (R.id.user_name);
-//        CircleImageView profImageView = headerView.findViewById (R.id.user_image);
+        TextView userEmail = headerView.findViewById (R.id.user_email);
+        CircleImageView profImageView = headerView.findViewById (R.id.user_image);
 
+        userNameTextView.setText (Prevalent.currentOnlineUser.getCname ());
+         Picasso.get ().load (Prevalent.currentOnlineUser.getImage ()).into (profImageView);
+        userEmail.setText (Prevalent.currentOnlineUser.getEmail ());
 
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-//
-//       FirebaseRecyclerOptions<Product> options =
-//                new FirebaseRecyclerOptions.Builder<Product>().setQuery(ProductRef, Product.class).build();
-//
-//       FirebaseRecyclerAdapter<Product, ProductViewHolder> adapter =
-//                new FirebaseRecyclerAdapter<Product, ProductViewHolder>(options) {
-//
-//                    @Override
-//                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Product Entites) {
-//
-//                        holder.txtProductName.setText(Entites.getPname());
-//                        holder.txtProductDescription.setText(Entites.getDescription());
-//                        holder.txtProductPrice.setText("Price = Rs." + Entites.getPrice());
-//                        Picasso.get().load(Entites.getImage()).into(holder.imageView);
-//
-//                        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//                            @Override
-//                            public void onClick(View view) {
-//
-//                                Intent intent = new Intent(NavDrawer.this, ProductDetailsActivity.class);
-//                                intent.putExtra("pid", Entites.getPid());
-//                                startActivity(intent);
-//
-//                            }
-//                        });
-//
-//                    }
-//
-//                    @NonNull
-//                    @Override
-//                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//
-//                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_items, parent, false);
-//                        ProductViewHolder holder = new ProductViewHolder(view);
-//                        return holder;
-//                    }
-//                };
-//            recyclerView.setAdapter(adapter);
-//            adapter.startListening();
+
     }
 
 
@@ -248,17 +218,17 @@ public class NavDrawer extends AppCompatActivity
         }
         else if (id == R.id.nav_setting)
         {
-            Intent intent = new Intent(NavDrawer.this, SettingActivity.class);
+            Intent intent = new Intent(NavDrawer.this, UpdateCustomer.class);
             startActivity(intent);
         }
         else if (id == R.id.nav_logout)
         {
-            // paper.book().destroy();
-
-            Intent intent = new Intent(NavDrawer.this, MainActivity.class);
+//            Paper.book().destroy();
+//            FirebaseAuth.getInstance ().signOut ();
+//            finish();
+            Intent intent = new Intent(NavDrawer.this, Login.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
-            finish();
         }
 
 

@@ -8,8 +8,6 @@ public class Customer {
 
     private String image;
 
-    private String username;
-
     private String email;
 
     private int contactNo;
@@ -22,7 +20,19 @@ public class Customer {
 
     private String password;
 
+    public Customer(String cname, String email, int contactNo, String addressLine1, String addressLine2, String district, String password) {
+        this.cname = cname;
+        this.image = image;
+        this.email = email;
+        this.contactNo = contactNo;
+        this.addressLine1 = addressLine1;
+        this.addressLine2 = addressLine2;
+        this.district = district;
+        this.password = password;
+    }
+
     public Customer() {
+
     }
 
     public String getCustomerID() {
@@ -41,13 +51,6 @@ public class Customer {
         this.cname = cname;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
     public String getImage() {
         return image;

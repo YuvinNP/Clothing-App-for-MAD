@@ -43,6 +43,10 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="becomeAseller">Become a Seller</string>
+    <string name="sellerRegister">Seller Registration</string>
+    <string name="sellername">Seller/ Company Name</string>
+    <string name="sella">Become a Seller</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>

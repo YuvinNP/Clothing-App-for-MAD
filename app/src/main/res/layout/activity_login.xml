@@ -72,7 +72,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:fontFamily="@font/fredokaoneregular"
-            android:text="@string/contact"
+            android:text="@string/email"
             android:textColor="@android:color/background_light"
             android:textSize="18sp" />
 
@@ -155,7 +155,7 @@
         android:fontFamily="@font/fredokaoneregular"
         android:layout_marginTop="10dp"
         android:text="@string/loginAsAUser"
-        android:textColor="@color/GradientBlue"
+        android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:visibility="invisible" />
 

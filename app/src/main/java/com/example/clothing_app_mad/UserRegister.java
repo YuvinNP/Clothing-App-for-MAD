@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.clothing_app_mad.Entites.Customer;
+import com.example.clothing_app_mad.Prevalent.Prevalent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
@@ -66,7 +67,7 @@ public class UserRegister extends AppCompatActivity {
 
         progressbar = new ProgressDialog(this);
 
-        customer = new Customer();
+
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,18 +110,26 @@ public class UserRegister extends AppCompatActivity {
 
     public void registerCustomer() {
 
+        final String cname = name.getText ().toString ();
+        final String cemail = email.getText ().toString ();
+        final int contactNo = Integer.parseInt (contactno.getText ().toString ());
+        final String password = cnpwrd.getText ().toString ();
+        final String addressline1 = addressLine1.getText ().toString ();
+        final String addressline2 = addressLine2.getText ().toString ();
+        final String district = addressLine3.getText ().toString ();
+
 
         dbref = FirebaseDatabase.getInstance().getReference().child("Customer");
 
         try {
 
-            if (TextUtils.isEmpty (name.getText ().toString ())) {
+            if (TextUtils.isEmpty (cname) ){
                 Toast.makeText (getApplicationContext (), "Please Enter the name", Toast.LENGTH_SHORT).show ();
-            } else if (TextUtils.isEmpty (email.getText ().toString ())) {
+            } else if (TextUtils.isEmpty (cemail)) {
                 Toast.makeText (getApplicationContext (), "Enter the email", Toast.LENGTH_LONG).show ();
             } else if (TextUtils.isEmpty (contactno.getText ().toString ())) {
                 Toast.makeText (getApplicationContext (), "Enter Contact no", Toast.LENGTH_LONG).show ();
-            } else if (TextUtils.isEmpty (cnpwrd.getText ().toString ())) {
+            } else if (TextUtils.isEmpty (password)) {
                 Toast.makeText (getApplicationContext (), "Enter Your Password", Toast.LENGTH_LONG);
 
                 if (TextUtils.isEmpty (crpwrd.getText ().toString ())) {
@@ -130,15 +139,15 @@ public class UserRegister extends AppCompatActivity {
             } else if (TextUtils.isEmpty (crpwrd.getText ().toString ())) {
 
                 Toast.makeText (getApplicationContext (), "Confirm Your Password", Toast.LENGTH_LONG).show ();
-            } else if (TextUtils.isEmpty (addressLine1.getText ().toString ())) {
+            } else if (TextUtils.isEmpty (addressline1)) {
 
                 Toast.makeText (getApplicationContext (), "Fill Address Line 1", Toast.LENGTH_LONG).show ();
 
-            } else if (TextUtils.isEmpty (addressLine2.getText ().toString ())) {
+            } else if (TextUtils.isEmpty (addressline2)) {
 
                 Toast.makeText (getApplicationContext (), "Fill Address Line 2", Toast.LENGTH_LONG).show ();
 
-            }else if(TextUtils.isEmpty (addressLine3.getText ().toString ())){
+            }else if(TextUtils.isEmpty (district)){
 
                 Toast.makeText (getApplicationContext (), "Enter District", Toast.LENGTH_LONG).show ();
 
@@ -150,58 +159,71 @@ public class UserRegister extends AppCompatActivity {
                 progressbar.setCanceledOnTouchOutside(false);
                 progressbar.show();
 
+                DatabaseReference dbref;
+                dbref = FirebaseDatabase.getInstance ().getReference ();
 
+                dbref.addListenerForSingleValueEvent (new ValueEventListener () {
+                    @Override
+                    public void onDataChange(final DataSnapshot dataSnapshot) {
+
+                        (firebaseAuth.createUserWithEmailAndPassword(email.getText().toString(), crpwrd.getText().toString()))
+                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                        progressbar.dismiss();
+
+                                        if(task.isSuccessful()){
+
+
+                                            Customer customer = new Customer (
+                                                    cname,
+                                                    cemail,
+                                                    contactNo,
+                                                    addressline1,
+                                                    addressline2,
+                                                    district,
+                                                    password
+
+                                            );
+                                            System.out.println ("asasdasd"+FirebaseDatabase.getInstance ().getReference ("Customer").child (FirebaseAuth.getInstance ().getCurrentUser ().getUid()));
+
+                                            FirebaseDatabase.getInstance ().getReference ("Customer").child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ())
+                                                    .setValue (customer).addOnCompleteListener (new OnCompleteListener<Void> () {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+
+                                                    if(task.isSuccessful ()){
+                                                        Customer customer;
+                                                        customer = dataSnapshot.child ("Customer").child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ()).getValue (Customer.class);
+                                                        Prevalent.currentOnlineUser = customer;
+                                                        Toast.makeText(getApplicationContext(), "Registration Successfull", Toast.LENGTH_LONG).show();
+                                                        Intent intent = new Intent(UserRegister.this, NavDrawer.class);
+                                                        startActivity(intent);
+                                                    }
+                                                    else {
+                                                        Log.e("ERROR", task.getException().toString());
+                                                        Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                                    }
+                                                }
+                                            });
+
+
+                                        }
+
+                                    }
+                                });
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
 
 
 
                 //firebase registration of user
-                (firebaseAuth.createUserWithEmailAndPassword(email.getText().toString(), crpwrd.getText().toString()))
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                                progressbar.dismiss();
-
-                                if(task.isSuccessful()){
-
-                                    count++;
-                                    String cid = "C0" + count;
-
-                                    customer.setCname(name.getText().toString().trim());
-                                    customer.setEmail(email.getText().toString().trim());
-                                    customer.setContactNo(Integer.parseInt(contactno.getText().toString().trim()));
-                                    customer.setPassword(crpwrd.getText().toString().trim());
-                                    customer.setAddressLine1 (addressLine1.getText ().toString ().trim ());
-                                    customer.setAddressLine2 (addressLine2.getText ().toString ().trim ());
-                                    customer.setDistrict (addressLine3.getText ().toString ().trim ());
-                                    dbref.child(email.getText ().toString ()).setValue(customer);
-
-                                    Toast.makeText(getApplicationContext(), "Registration Successfull", Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(UserRegister.this, NavDrawer.class);
-                                    startActivity(intent);
-                                }
-                                else {
-                                    Log.e("ERROR", task.getException().toString());
-                                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        });
-
-
-//
-//                Runnable progressRunnable = new Runnable() {
-//
-//                    @Override
-//                    public void run() {
-//                        progressbar.cancel();
-//                    }
-//                };
-//
-//                Handler phandler = new Handler();
-//                phandler.postDelayed(progressRunnable, 3000);
-
-
-
 
 
             } else {
