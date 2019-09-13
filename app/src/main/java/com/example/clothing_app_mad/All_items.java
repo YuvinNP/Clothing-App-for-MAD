@@ -1,5 +1,6 @@
 package com.example.clothing_app_mad;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,6 +29,7 @@ public class All_items extends Fragment {
     private DatabaseReference productRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
+
 
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
@@ -64,12 +66,23 @@ public class All_items extends Fragment {
 
         FirebaseRecyclerAdapter<Product, ProductViewHolder> adapter = new FirebaseRecyclerAdapter<Product, ProductViewHolder> (options) {
             @Override
-            protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull Product product) {
+            protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull final Product product) {
 
                 productViewHolder.txtProductName.setText (product.getPname ());
                 productViewHolder.txtProductDescription.setText (product.getDescription ());
-                productViewHolder.txtProductPrice.setText ("Price : " + product.getPrice () + "Rs.");
+                productViewHolder.txtProductPrice.setText ("Price : Rs." + product.getPrice ());
                 Picasso.get ().load (product.getImage ()).into (productViewHolder.imageView);
+
+
+                productViewHolder.itemView.setOnClickListener( new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Intent intent = new Intent(getActivity(), ProductDetailsActivity.class);
+                        intent.putExtra("pid", product.getPid());
+                        startActivity(intent);
+                    }
+                } );
             }
 
             @NonNull

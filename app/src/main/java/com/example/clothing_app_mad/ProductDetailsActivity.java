@@ -54,6 +54,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 addingToCartList();
             }
         });
+
     }
 
     private void addingToCartList(){
@@ -99,7 +100,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     Product product = dataSnapshot.getValue(Product.class);
 
                     productName.setText(product.getPname());
-                    productPrice.setText(product.getPrice());
+                    productPrice.setText("Price : Rs." + product.getPrice ());
                     productDescription.setText(product.getDescription());
                     Picasso.get().load(product.getImage()).into(productImage);
                 }
