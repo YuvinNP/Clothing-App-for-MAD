@@ -31,9 +31,9 @@ import java.util.HashMap;
 public class ProductDetailsActivity extends AppCompatActivity {
 
     private Button addToCartButton;
-    private ImageView productImage;
     private ElegantNumberButton numberButton;
     private TextView  productName, productDescription, productPrice;
+    private ImageView productImage;
     private String productID = "";
 
     @Override
@@ -87,8 +87,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         cartListRef.child( "User view" ).child( Prevalent.currentOnlineUser.getCname() )
                 .child( "Product" ).child( productID )
-                .updateChildren( cartMap )
-                .addOnCompleteListener( new OnCompleteListener<Void>() {
+                .updateChildren(cartMap)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task)
                     {
@@ -129,7 +129,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     productName.setText(product.getPname());
                     productPrice.setText("Price : Rs." + product.getPrice ());
                     productDescription.setText(product.getDescription());
-                    Picasso.get().load(product.getImage()).into(productImage);
+                 /*   Picasso.get().load(product.getImage()).into(productImage);*/
                 }
             }
 

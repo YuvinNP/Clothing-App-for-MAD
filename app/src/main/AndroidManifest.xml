@@ -11,15 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".UpdateCustomer"></activity>
+        <activity android:name=".CartActivity"></activity>
+        <activity android:name=".UpdateCustomer" />
         <activity android:name=".ResetPassword" />
         <activity android:name=".SupplierCategoryActivity" />
         <activity android:name=".SupplierAddNewProductActivity" />
         <activity android:name=".UserRegister" />
-        <activity android:name=".Login">
-
-        </activity>
+        <activity android:name=".Login"></activity>
         <activity android:name=".ChangeProfile" />
         <activity android:name=".Splash_Screen">
             <intent-filter>
@@ -28,17 +26,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".NavDrawer" android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+        <activity
+            android:name=".NavDrawer"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".MainActivity" />
-
-        <activity android:name=".ProductDetailsActivity"></activity>
+        <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".Ladies_Dresses" />
-
-
     </application>
 
 </manifest>

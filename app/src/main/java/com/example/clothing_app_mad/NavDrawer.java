@@ -127,12 +127,16 @@ public class NavDrawer extends AppCompatActivity
 
         setSupportActionBar (toolbar);
 
+
+        //to go to the cart activity from the navdrawer floating button
         FloatingActionButton fab = findViewById (R.id.fab);
         fab.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Snackbar.make (view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction ("Action", null).show ();
+
+                Intent intent = new Intent(NavDrawer.this, CartActivity.class);
+                startActivity(intent);
+
             }
         });
 
@@ -206,7 +210,9 @@ public class NavDrawer extends AppCompatActivity
 
         if (id == R.id.nav_cart)
         {
-            // Handle the camera action
+            //go to cart activity from the navdrawer side bar
+            Intent intent = new Intent(NavDrawer.this, CartActivity.class);
+            startActivity(intent);
         }
         else if (id == R.id.nav_orders)
         {
