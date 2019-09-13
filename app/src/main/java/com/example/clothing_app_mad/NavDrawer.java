@@ -154,10 +154,16 @@ public class NavDrawer extends AppCompatActivity
         TextView userEmail = headerView.findViewById (R.id.user_email);
         CircleImageView profImageView = headerView.findViewById (R.id.user_image);
 
-        userNameTextView.setText (Prevalent.currentOnlineUser.getCname ());
-         Picasso.get ().load (Prevalent.currentOnlineUser.getImage ()).into (profImageView);
-        userEmail.setText (Prevalent.currentOnlineUser.getEmail ());
-
+        if(Prevalent.currentOnlineUser == null){
+            userNameTextView.setText (Prevalent.currentOnlineSeller.getSname ());
+           // Picasso.get ().load (Prevalent.currentOnlineCustomer.getImage ()).into (profImageView);
+            userEmail.setText (Prevalent.currentOnlineSeller.getEmail ());
+        }
+        else {
+            userNameTextView.setText (Prevalent.currentOnlineUser.getCname ());
+            Picasso.get ().load (Prevalent.currentOnlineUser.getImage ()).into (profImageView);
+            userEmail.setText (Prevalent.currentOnlineUser.getEmail ());
+        }
     }
 
     @Override

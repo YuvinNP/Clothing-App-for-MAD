@@ -9,6 +9,13 @@
     android:weightSum="10"
     tools:context="com.example.clothing_app_mad.MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,14 +45,19 @@
             android:textColor="@android:color/background_light"
             android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView16"
+        <Button
+            android:id="@+id/sellerreg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="200dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/mainbtn1"
             android:fontFamily="@font/fredokaoneregular"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="18sp"
+            android:visibility="visible"
             tools:text="@string/becomeAseller" />
     </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
 </RelativeLayout>

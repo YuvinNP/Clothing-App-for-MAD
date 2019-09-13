@@ -126,7 +126,7 @@
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/singupbtn"
+            android:id="@+id/signinbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"

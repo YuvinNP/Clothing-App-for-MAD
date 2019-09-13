@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.clothing_app_mad.Entites.Customer;
+import com.example.clothing_app_mad.Entites.Seller;
 import com.example.clothing_app_mad.Prevalent.Prevalent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -38,6 +39,7 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private String parentDbName = "Customer";
     private Customer customer;
+    private Seller seller;
 
     private FirebaseAuth.AuthStateListener mAuthListner;
 
@@ -46,7 +48,7 @@ public class Login extends AppCompatActivity {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_login);
 
-        loginBtn = findViewById (R.id.singupbtn);
+        loginBtn = findViewById (R.id.signinbtn);
         sellerLink = findViewById (R.id.login_as_seller);
         userLink = findViewById (R.id.login_as_user);
         loginAs = findViewById (R.id.loginas);
@@ -77,7 +79,7 @@ public class Login extends AppCompatActivity {
                 loginBtn.setText ("LOGIN AS A SELLER");
                 sellerLink.setVisibility (View.INVISIBLE);
                 userLink.setVisibility (View.VISIBLE);
-                parentDbName = "";
+                parentDbName = "Seller";
             }
         });
 
@@ -148,10 +150,18 @@ public class Login extends AppCompatActivity {
 
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            System.out.println ("LOGIN: " + dataSnapshot.child ("Customer").child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ()));
+                            System.out.println ("LOGIN: " + dataSnapshot.child (parentDbName).child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ()));
 
-                            if(dataSnapshot.child ("Customer").child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ()) != null) {
-                                customer = dataSnapshot.child ("Customer").child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ()).getValue (Customer.class);
+                            if (dataSnapshot.child (parentDbName).child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ()) != null) {
+
+                                if (parentDbName.equals ("Customer")) {
+
+                                    customer = dataSnapshot.child (parentDbName).child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ()).getValue (Customer.class);
+
+                                } else {
+                                    seller = dataSnapshot.child (parentDbName).child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ()).getValue (Seller.class);
+
+                                }
                             }
                             if (task.isSuccessful ()) {
                                 System.out.println ("LOGIN: " + dataSnapshot.child (parentDbName).child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ()));
@@ -159,7 +169,11 @@ public class Login extends AppCompatActivity {
                                 Toast.makeText (Login.this, "Signed In", Toast.LENGTH_SHORT).show ();
                                 Intent intent = new Intent (Login.this, NavDrawer.class);
                                 intent.addFlags (Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                Prevalent.currentOnlineUser = customer;
+                                if (parentDbName.equals ("Customer")) {
+                                    Prevalent.currentOnlineUser = customer;
+                                } else {
+                                    Prevalent.currentOnlineSeller = seller;
+                                }
                                 startActivity (intent);
 
                             } else {

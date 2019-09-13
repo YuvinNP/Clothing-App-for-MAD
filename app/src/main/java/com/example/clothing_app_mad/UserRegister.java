@@ -5,13 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.telephony.SmsManager;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -53,14 +49,14 @@ public class UserRegister extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         backBtn = findViewById(R.id.backBtnR);
-        signupBtn = findViewById(R.id.singupbtn);
+        signupBtn = findViewById(R.id.signupbtn);
         name = findViewById(R.id.name);
-        email = findViewById(R.id.email);
+        email = findViewById(R.id.semail);
         contactno = findViewById(R.id.contactNo);
         crpwrd = findViewById(R.id.crpwrd);
         cnpwrd = findViewById(R.id.confpwrd);
-        addressLine1 = findViewById (R.id.address1);
-        addressLine2 = findViewById (R.id.address2);
+        addressLine1 = findViewById (R.id.saddress1);
+        addressLine2 = findViewById (R.id.saddress2);
         addressLine3 = findViewById (R.id.address3);
 
         childCountDb = FirebaseDatabase.getInstance().getReference().child("Customer");
