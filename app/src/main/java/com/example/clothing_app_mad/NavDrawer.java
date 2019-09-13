@@ -117,15 +117,12 @@ public class NavDrawer extends AppCompatActivity
 
 
 //        paper.init.(this);
-//
+
         Toolbar toolbar = findViewById (R.id.customToolbar);
         toolbar.setTitle ("Home");
-//
-//
-//
-//
+
         setSupportActionBar (toolbar);
-//
+
         FloatingActionButton fab = findViewById (R.id.fab);
         fab.setOnClickListener (new View.OnClickListener () {
             @Override
@@ -140,7 +137,7 @@ public class NavDrawer extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener (toggle);
         toggle.syncState ();
-//
+
         NavigationView navigationView = findViewById (R.id.nav_view);
         navigationView.setNavigationItemSelectedListener (this);
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,18 +20,19 @@
             android:layout_height="0dp">
 
             <TextView
-                android:id="@+id/gents_Txt1"
+                android:id="@+id/ladies_Txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="100dp"
-                android:text="Gents"
+                android:text="Ladies"
                 android:textColor="@android:color/white"
                 android:textSize="34dp" />
 
         </RelativeLayout>
 
         <GridLayout
+            android:id="@+id/mainGrid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="6"
