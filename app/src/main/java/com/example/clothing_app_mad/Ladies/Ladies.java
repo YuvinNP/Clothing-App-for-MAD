@@ -15,14 +15,15 @@ import android.widget.GridLayout;
 import com.example.clothing_app_mad.R;
 
 
-/**
+/*
+*
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * {@link Ladies.OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link Ladies#newInstance} factory method to
  * create an instance of this fragment.
- */
+*/
 public class Ladies extends Fragment {
 
     GridLayout gridMain;
@@ -40,8 +41,6 @@ public class Ladies extends Fragment {
         setSingleEvent(gridMain);
 
         return view;
-
-
 
     }
 
