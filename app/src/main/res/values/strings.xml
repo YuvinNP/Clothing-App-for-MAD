@@ -65,4 +65,6 @@
     <string name="cart_product_name">Product Name</string>
     <string name="cart_product_qty">Product Quantity</string>
     <string name="cart_product_price">Product Price</string>
+
+    <string name="search_btn">Search</string>
 </resources>

@@ -10,9 +10,9 @@
             android:title="Cart"
             />
         <item
-            android:id="@+id/nav_orders"
-            android:icon="@drawable/ic_orderlist"
-            android:title="Order" />
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_search_black_24dp"
+            android:title="Search" />
         <item
             android:id="@+id/nav_notification"
             android:icon="@drawable/ic_notifications"

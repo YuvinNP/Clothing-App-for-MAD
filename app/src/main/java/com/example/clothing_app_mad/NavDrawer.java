@@ -220,9 +220,10 @@ public class NavDrawer extends AppCompatActivity
             Intent intent = new Intent(NavDrawer.this, CartActivity.class);
             startActivity(intent);
         }
-        else if (id == R.id.nav_orders)
+        else if (id == R.id.nav_search)
         {
-
+            Intent intent = new Intent(NavDrawer.this, SearchActivity.class);
+            startActivity(intent);
         }
         else if (id == R.id.nav_notification)
         {

@@ -161,7 +161,7 @@ public class CartActivity extends AppCompatActivity {
     }
 
     //to check the shipping order state
-    private void checkOrderState(){
+    private void  checkOrderState(){
 
         DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getCname());
 

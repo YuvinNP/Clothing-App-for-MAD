@@ -11,13 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CartActivity"></activity>
+        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".CartActivity" />
         <activity android:name=".UpdateCustomer" />
         <activity android:name=".ResetPassword" />
         <activity android:name=".SupplierCategoryActivity" />
         <activity android:name=".SupplierAddNewProductActivity" />
         <activity android:name=".UserRegister" />
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
         <activity android:name=".ChangeProfile" />
         <activity android:name=".Splash_Screen">
             <intent-filter>
@@ -28,7 +29,7 @@
         </activity>
         <activity
             android:name=".NavDrawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".SettingActivity" />
