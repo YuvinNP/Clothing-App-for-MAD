@@ -72,7 +72,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        checkOrderState();
+       // checkOrderState();
     }
 
     private void addingToCartList() {
@@ -142,7 +142,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     productName.setText(product.getPname());
                     productPrice.setText(product.getPrice ());
                     productDescription.setText(product.getDescription());
-                 /*   Picasso.get().load(product.getImage()).into(productImage);*/
+                   Picasso.get().load(product.getImage()).into(productImage);
                 }
             }
 
@@ -153,7 +153,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         });
     }
 
-    private void checkOrderState(){
+ /*   private void checkOrderState(){
 
         DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getCname());
 
@@ -161,7 +161,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                String shippingState = dataSnapshot.child("State").getValue().toString();
+                String shippingState = (String) dataSnapshot.child("State").getValue();
 
                 if(shippingState.equals("shipped")){
 
@@ -180,5 +180,5 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
             }
         } );
-    }
+    }*/
 }

@@ -48,6 +48,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
             }
         } );
     }
+    //field validation
     private void check() {
 
         if (TextUtils.isEmpty(nameTxt.getText().toString())){

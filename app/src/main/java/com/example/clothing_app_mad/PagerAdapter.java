@@ -1,9 +1,12 @@
 package com.example.clothing_app_mad;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
+import com.example.clothing_app_mad.Gents.Gents;
+import com.example.clothing_app_mad.Kids.Kids;
+import com.example.clothing_app_mad.Ladies.Ladies;
 
 public class PagerAdapter extends FragmentPagerAdapter {
 

@@ -1,4 +1,4 @@
-package com.example.clothing_app_mad;
+package com.example.clothing_app_mad.Seller;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,12 +11,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.clothing_app_mad.Entites.Customer;
 import com.example.clothing_app_mad.Entites.Seller;
+import com.example.clothing_app_mad.NavDrawer;
 import com.example.clothing_app_mad.Prevalent.Prevalent;
+import com.example.clothing_app_mad.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -39,7 +39,7 @@ public class SellerRegiser extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
-        setContentView (R.layout.activity_seller_regiser);
+        setContentView ( R.layout.activity_seller_regiser);
 
         name = findViewById (R.id.sname);
         email = findViewById (R.id.semail);

@@ -1,14 +1,16 @@
-package com.example.clothing_app_mad;
+package com.example.clothing_app_mad.Gents;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Ladies_Trousers extends AppCompatActivity {
+import com.example.clothing_app_mad.R;
+
+public class Gents_Shorts extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_ladies__trousers );
+        setContentView( R.layout.activity_gents__shorts );
     }
 }

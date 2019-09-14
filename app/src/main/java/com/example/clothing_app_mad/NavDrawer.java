@@ -4,19 +4,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.example.clothing_app_mad.Entites.Customer;
-import com.example.clothing_app_mad.Entites.Product;
-
+import com.example.clothing_app_mad.Gents.Gents;
+import com.example.clothing_app_mad.Kids.Kids;
+import com.example.clothing_app_mad.Ladies.Ladies;
 import com.example.clothing_app_mad.Prevalent.Prevalent;
-import com.example.clothing_app_mad.ViewHolder.ProductViewHolder;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 
-import android.view.LayoutInflater;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -29,11 +24,9 @@ import com.google.android.material.navigation.NavigationView;
 
 import com.google.android.material.tabs.TabLayout;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
@@ -46,18 +39,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.Menu;
-import android.widget.EditText;
-import android.widget.TableLayout;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.Menu;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import io.paperdb.Paper;
 
 
 public class NavDrawer extends AppCompatActivity

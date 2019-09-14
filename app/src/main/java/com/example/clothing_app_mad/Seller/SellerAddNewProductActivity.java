@@ -1,4 +1,4 @@
-package com.example.clothing_app_mad;
+package com.example.clothing_app_mad.Seller;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.clothing_app_mad.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,7 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class SupplierAddNewProductActivity extends AppCompatActivity {
+public class SellerAddNewProductActivity extends AppCompatActivity {
 
     private String categoryName, description, price, pname, saveCurrentDate, saveCurrentTime ;
     private Button addProductBtn;
@@ -46,7 +47,7 @@ public class SupplierAddNewProductActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_supplier_add_new_product);
+        setContentView( R.layout.activity_seller_add_new_product );
 
         categoryName = getIntent().getExtras().get("category").toString();
         Toast.makeText(this, categoryName, Toast.LENGTH_SHORT).show();
@@ -150,14 +151,14 @@ public class SupplierAddNewProductActivity extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
 
                 String message = e.toString();
-                Toast.makeText(SupplierAddNewProductActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
+                Toast.makeText( SellerAddNewProductActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
                 loadingBar.dismiss();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                Toast.makeText(SupplierAddNewProductActivity.this, "Product Image Uploaded Successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText( SellerAddNewProductActivity.this, "Product Image Uploaded Successfully", Toast.LENGTH_SHORT).show();
 
                 Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                     @Override
@@ -177,7 +178,7 @@ public class SupplierAddNewProductActivity extends AppCompatActivity {
 
                            downloadImageUrl = task.getResult().toString();
 
-                            Toast.makeText(SupplierAddNewProductActivity.this, "Got the product image url successfully...", Toast.LENGTH_SHORT).show();
+                            Toast.makeText( SellerAddNewProductActivity.this, "Got the product image url successfully...", Toast.LENGTH_SHORT).show();
 
                            saveProductInfoToDatabase();
                         }
@@ -204,16 +205,16 @@ public class SupplierAddNewProductActivity extends AppCompatActivity {
 
                         if (task.isSuccessful())
                         {
-                            Intent intent = new Intent(SupplierAddNewProductActivity.this, SupplierCategoryActivity.class);
+                            Intent intent = new Intent( SellerAddNewProductActivity.this, SellerCategoryActivity.class);
                             startActivity(intent);
 
                             loadingBar.dismiss();
-                            Toast.makeText(SupplierAddNewProductActivity.this, "Product is added successfully...", Toast.LENGTH_SHORT).show();
+                            Toast.makeText( SellerAddNewProductActivity.this, "Product is added successfully...", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             loadingBar.dismiss();
                             String message = task.getException().toString();
-                            Toast.makeText(SupplierAddNewProductActivity.this, "Error: "+ message,Toast.LENGTH_SHORT).show();
+                            Toast.makeText( SellerAddNewProductActivity.this, "Error: "+ message,Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

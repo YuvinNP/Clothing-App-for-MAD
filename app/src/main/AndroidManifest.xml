@@ -11,12 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".Gents.Gents_TShirts"></activity>
+        <activity android:name=".Gents.Gents_Shirts" />
+        <activity android:name=".Gents.Gents_Shorts" />
+        <activity android:name=".Gents.Gents_Trousers" />
+        <activity android:name=".Kids.Boys_Accessories" />
+        <activity android:name=".Kids.Girl_Accessories" />
+        <activity android:name=".Kids.Boys_Kid_Items" />
+        <activity android:name=".Kids.Girl_Kid_Items" />
+        <activity android:name=".SearchActivity" />
         <activity android:name=".CartActivity" />
         <activity android:name=".UpdateCustomer" />
         <activity android:name=".ResetPassword" />
-        <activity android:name=".SupplierCategoryActivity" />
-        <activity android:name=".SupplierAddNewProductActivity" />
+        <activity android:name=".Seller.SellerCategoryActivity" />
+        <activity android:name=".Seller.SellerAddNewProductActivity" />
         <activity android:name=".UserRegister" />
         <activity android:name=".Login" />
         <activity android:name=".ChangeProfile" />
@@ -33,7 +41,11 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".SettingActivity" />
-        <activity android:name=".Ladies_Dresses" />
+        <activity android:name=".Ladies.Ladies_Dresses" />
+        <activity android:name=".Ladies.Ladies_Skirts" />
+        <activity android:name=".Ladies.Ladies_Trousers" />
+        <activity android:name=".Ladies.Ladies_Tops" />
+        <activity android:name=".ConfirmOrderActivity" />
     </application>
 
 </manifest>

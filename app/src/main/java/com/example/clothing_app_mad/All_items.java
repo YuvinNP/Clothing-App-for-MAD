@@ -70,7 +70,7 @@ public class All_items extends Fragment {
 
                 productViewHolder.txtProductName.setText (product.getPname ());
                 productViewHolder.txtProductDescription.setText (product.getDescription ());
-                productViewHolder.txtProductPrice.setText ("Price : Rs." + product.getPrice ());
+                productViewHolder.txtProductPrice.setText (product.getPrice ());
                 Picasso.get ().load (product.getImage ()).into (productViewHolder.imageView);
 
 
