@@ -34,6 +34,8 @@ public class CartActivity extends AppCompatActivity {
     private Button nextbutton;
     private TextView txtTotalAmount;
 
+  /*  private int overallTotalPrice = 0;*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -46,11 +48,27 @@ public class CartActivity extends AppCompatActivity {
 
         nextbutton = (Button) findViewById(R.id.nextBtn);
         txtTotalAmount = (TextView) findViewById(R.id.total_price);
+
+        nextbutton.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                Intent intent = new Intent(CartActivity.this, ConfirmOrderActivity.class);
+               // intent.putExtra("Total Price ", String.valueOf(overallTotalPrice));
+                startActivity(intent);
+               // finish();
+            }
+        } );
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+
+        //to preview total price in the cart activity itself
+        // txtTotalAmount.setText(String.valueOf(overallTotalPrice));
 
         //to retrive the data on the cart list table
         final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
@@ -62,13 +80,17 @@ public class CartActivity extends AppCompatActivity {
 
         FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull CartViewHolder holder, int i, @NonNull final Cart cart) {
+            protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull final Cart cart) {
 
                 holder.txtProductName.setText(cart.getPname() );
                 holder.txtProductPrice.setText(cart.getPrice());
-                holder.txtProductQty.setText("Qty : "+ cart.getQuantity());
+                holder.txtProductQty.setText(cart.getQuantity());
                /* Picasso.get().load (cart.getImage()).into(holder.imageView);*/
 
+               /* int oneProductTotalPrice = (Integer.valueOf(cart.getPrice())) * (Integer.valueOf(cart.getQuantity()));
+
+                overallTotalPrice = overallTotalPrice + oneProductTotalPrice;
+*/
                 //to remove or edit a item in the cart
              holder.itemView.setOnClickListener( new View.OnClickListener() {
                     @Override
