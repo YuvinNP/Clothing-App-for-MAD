@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.clothing_app_mad.Entites.Customer;
 import com.example.clothing_app_mad.Entites.Seller;
 import com.example.clothing_app_mad.Prevalent.Prevalent;
+import com.example.clothing_app_mad.Seller.SellerCategoryActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -167,14 +168,20 @@ public class Login extends AppCompatActivity {
                                 System.out.println ("LOGIN: " + dataSnapshot.child (parentDbName).child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ()));
                                 progressDialog.dismiss ();
                                 Toast.makeText (Login.this, "Signed In", Toast.LENGTH_SHORT).show ();
-                                Intent intent = new Intent (Login.this, NavDrawer.class);
-                                intent.addFlags (Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
                                 if (parentDbName.equals ("Customer")) {
                                     Prevalent.currentOnlineUser = customer;
+                                    Intent intent = new Intent (Login.this, NavDrawer.class);
+                                    intent.addFlags (Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity (intent);
+
                                 } else {
                                     Prevalent.currentOnlineSeller = seller;
+                                    Intent intent = new Intent (Login.this, SellerCategoryActivity.class);
+                                    intent.addFlags (Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity (intent);
                                 }
-                                startActivity (intent);
+
 
                             } else {
                                 progressDialog.dismiss ();

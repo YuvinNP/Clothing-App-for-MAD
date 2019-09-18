@@ -57,11 +57,12 @@ public class CartActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(CartActivity.this, ConfirmOrderActivity.class);
-                intent.putExtra("Total Price ", String.valueOf(overallTotalPrice));
-                startActivity(intent);
-                finish();
 
+
+                Intent intent = new Intent(CartActivity.this, ConfirmOrderActivity.class);
+               // intent.putExtra("Total Price ", String.valueOf(overallTotalPrice));
+                startActivity(intent);
+               // finish();
             }
         } );
     }
@@ -71,10 +72,10 @@ public class CartActivity extends AppCompatActivity {
         super.onStart();
 
         //call the method
-        //checkOrderState();
+        checkOrderState();
 
         //to preview total price in the cart activity itself
-        txtTotalAmount.setText(String.valueOf(overallTotalPrice));
+        // txtTotalAmount.setText(String.valueOf(overallTotalPrice));
 
         //to retrive the data on the cart list table
         final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
@@ -93,10 +94,10 @@ public class CartActivity extends AppCompatActivity {
                 holder.txtProductQty.setText(cart.getQuantity());
                /* Picasso.get().load (cart.getImage()).into(holder.imageView);*/
 
-                int oneProductTotalPrice = (Integer.valueOf(cart.getPrice())) * (Integer.valueOf(cart.getQuantity()));
+               /* int oneProductTotalPrice = (Integer.valueOf(cart.getPrice())) * (Integer.valueOf(cart.getQuantity()));
 
                 overallTotalPrice = overallTotalPrice + oneProductTotalPrice;
-
+*/
                 //to remove or edit a item in the cart
              holder.itemView.setOnClickListener( new View.OnClickListener() {
                     @Override
@@ -160,7 +161,7 @@ public class CartActivity extends AppCompatActivity {
     }
 
     //to check the shipping order state
-   /* private void  checkOrderState(){
+    private void checkOrderState(){
 
         DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getCname());
 
@@ -205,5 +206,5 @@ public class CartActivity extends AppCompatActivity {
 
             }
         } );
-    }*/
+    }
 }

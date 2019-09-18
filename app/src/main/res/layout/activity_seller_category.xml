@@ -12,23 +12,25 @@
         android:layout_height="match_parent"
         android:weightSum="10"
         android:orientation="vertical"
-        android:background="@drawable/formback">
+        android:background="@drawable/sellerback3">
 
         <RelativeLayout
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="0dp">
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:id="@+id/ladies_Txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginTop="120dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="100dp"
+                android:fontFamily="@font/manjariregular"
                 android:text="Add New Products"
                 android:textColor="@android:color/white"
-                android:layout_centerHorizontal="true"
-                android:textSize="34dp" />
+                android:textSize="28dp" />
 
         </RelativeLayout>
 
@@ -36,6 +38,7 @@
             android:id="@+id/mainGrid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_weight="8"
             android:alignmentMode="alignMargins"
             android:columnCount="3"
@@ -386,40 +389,50 @@
             android:layout_width="match_parent"
             android:layout_height="0dp">-->
 
-          <Button
-              android:id="@+id/maintain_Btn"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_centerVertical="true"
-              android:text="Update Product Details"
-              android:textColor="@android:color/white"
-              android:layout_margin="5dp"
-              android:textSize="20dp" />
+        <Button
+            android:id="@+id/maintain_Btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:background="@color/GradientBlue"
+            android:fontFamily="@font/fredokaoneregular"
+            android:text="Update Product Details"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
     <!--  </RelativeLayout>
 -->
 
         <Button
-              android:id="@+id/checkOrder_Btn"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_centerHorizontal="true"
-              android:layout_centerVertical="true"
-              android:text="Check New Orders"
-              android:layout_margin="5dp"
-              android:textColor="@android:color/white"
-              android:textSize="20dp" />
+            android:id="@+id/checkOrder_Btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:background="@color/GradientBlue"
+            android:fontFamily="@font/fredokaoneregular"
+            android:text="Check New Orders"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
-          <Button
-              android:id="@+id/logout_Btn"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_centerHorizontal="true"
-              android:layout_centerVertical="true"
-              android:layout_margin="5dp"
-              android:text="Logout"
-              android:textColor="@android:color/white"
-              android:textSize="20dp"
-              android:layout_below="@+id/checkOrderBtn"/>
+        <Button
+            android:id="@+id/logout_Btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/checkOrderBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="16dp"
+            android:background="@color/GradientBlue"
+            android:fontFamily="@font/fredokaoneregular"
+            android:text="Logout"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
 
 
