@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.clothing_app_mad.MainActivity;
 import com.example.clothing_app_mad.R;
 
 public class SellerCategoryActivity extends AppCompatActivity {
@@ -16,10 +18,16 @@ public class SellerCategoryActivity extends AppCompatActivity {
     private ImageView Girls, Boys;
     private ImageView BoysAccessories, GirlsAccessories;
 
+    private Button logoutBtn, chkOrderBtn, maintainBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView( R.layout.activity_seller_category );
+
+        logoutBtn = (Button) findViewById(R.id.logout_Btn);
+        chkOrderBtn = (Button) findViewById( R.id.logout_Btn );
+        maintainBtn = (Button) findViewById( R.id.maintain_Btn );
 
         WomenDresses = (ImageView) findViewById(R.id.female_dresses);
         WomenSkirts = (ImageView) findViewById(R.id.female_skirts);
@@ -35,6 +43,27 @@ public class SellerCategoryActivity extends AppCompatActivity {
         Boys = (ImageView) findViewById(R.id.boy_Items);
         GirlsAccessories = (ImageView) findViewById(R.id.girl_accessories);
         BoysAccessories = (ImageView) findViewById(R.id.boy_accessories);
+
+        logoutBtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent( SellerCategoryActivity.this, MainActivity.class );
+                intent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity( intent );
+                finish();
+            }
+        } );
+
+        chkOrderBtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent( SellerCategoryActivity.this, SellerNewOrdersActivity.class );
+                startActivity( intent );
+
+            }
+        } );
 
         WomenDresses.setOnClickListener(new View.OnClickListener() {
             @Override

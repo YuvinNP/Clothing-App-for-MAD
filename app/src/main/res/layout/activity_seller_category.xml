@@ -387,7 +387,7 @@
             android:layout_height="0dp">-->
 
           <Button
-              android:id="@+id/maintainBtn"
+              android:id="@+id/maintain_Btn"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:layout_centerVertical="true"
@@ -399,7 +399,7 @@
 -->
 
         <Button
-              android:id="@+id/checkOrderBtn"
+              android:id="@+id/checkOrder_Btn"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:layout_centerHorizontal="true"
@@ -410,7 +410,7 @@
               android:textSize="20dp" />
 
           <Button
-              android:id="@+id/logoutBtn"
+              android:id="@+id/logout_Btn"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:layout_centerHorizontal="true"
