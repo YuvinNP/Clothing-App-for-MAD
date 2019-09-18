@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -81,7 +82,23 @@ public class SellerNewOrdersActivity extends AppCompatActivity {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(SellerNewOrdersActivity.this);
                                 builder.setTitle("Have ypu shipped this products ? ");
 
-                               // builder.setItems(options, new D)
+                                builder.setItems( options, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                                        if (i == 0){
+
+                                            //if seller confirm the shipment order that order will remove from the database
+                                            String uID = getRef(position).getKey();
+                                            RemoveOrder(uID);
+                                        }
+                                        else{
+                                            finish();
+                                        }
+                                    }
+                                } );
+                                //to call the dialogue box
+                                builder.show();
                             }
                         } );
                     }
@@ -99,6 +116,8 @@ public class SellerNewOrdersActivity extends AppCompatActivity {
             adapter.startListening();
     }
 
+
+
     public static class SellerOrdersViewHolder extends RecyclerView.ViewHolder{
 
         public TextView customerName, customerPhoneNo, customerTotalPrice, customerShippingAddress, customerDateTime;
@@ -113,5 +132,10 @@ public class SellerNewOrdersActivity extends AppCompatActivity {
             customerShippingAddress = itemView.findViewById(R.id.order_address);
             customerDateTime = itemView.findViewById(R.id.order_date_time);
         }
+    }
+
+    private void RemoveOrder(String uID)
+    {
+        ordersRef.child(uID).removeValue();
     }
 }
