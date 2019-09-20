@@ -10,5 +10,6 @@
     <color name="formBlue">#006BF7</color>
     <color name="formGray">#4B4B4B</color>
     <color name="backgroundPay">#FAFAFA</color>
+    <color name="paymentGray">#F4F4F4</color>
 
 </resources>
