@@ -70,6 +70,7 @@ public class SellerNewOrdersActivity extends AppCompatActivity {
                             }
                         } );
 
+                        //a dialogue box to check whether the order is shipped or not
                         holder.itemView.setOnClickListener( new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
@@ -134,6 +135,7 @@ public class SellerNewOrdersActivity extends AppCompatActivity {
         }
     }
 
+    //to remove order from the database after shipped
     private void RemoveOrder(String uID)
     {
         ordersRef.child(uID).removeValue();

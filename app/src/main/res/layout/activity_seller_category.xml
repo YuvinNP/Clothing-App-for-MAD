@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:weightSum="10"
         android:orientation="vertical"
-        android:background="@drawable/sellerback3">
+        android:background="@drawable/formback">
 
         <RelativeLayout
             android:layout_weight="1"
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_weight="8"
+            android:layout_weight="9"
             android:alignmentMode="alignMargins"
             android:columnCount="3"
             android:columnOrderPreserved="false"
@@ -390,11 +390,11 @@
             android:layout_height="0dp">-->
 
         <Button
-            android:id="@+id/maintain_Btn"
+            android:id="@+id/update_Btn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:layout_centerVertical="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
             android:background="@color/GradientBlue"
@@ -408,10 +408,10 @@
         <Button
             android:id="@+id/checkOrder_Btn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="7dp"
             android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
             android:background="@color/GradientBlue"
@@ -423,11 +423,13 @@
         <Button
             android:id="@+id/logout_Btn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:layout_below="@+id/checkOrderBtn"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_margin="16dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
             android:background="@color/GradientBlue"
             android:fontFamily="@font/fredokaoneregular"
             android:text="Logout"

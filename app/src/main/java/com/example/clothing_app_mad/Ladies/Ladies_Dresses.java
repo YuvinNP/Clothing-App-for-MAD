@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.clothing_app_mad.Entites.Product;
 import com.example.clothing_app_mad.ProductDetailsActivity;
 import com.example.clothing_app_mad.R;
+import com.example.clothing_app_mad.Seller.SellerMaintainProductsActivity;
 import com.example.clothing_app_mad.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -28,11 +29,26 @@ public class Ladies_Dresses extends AppCompatActivity {
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
 
+
+    //to preview updated products by seller
+    private String type = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_ladies__dresses );
 
+
+        //to preview updated products by seller
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        if (bundle != null)
+        {
+            type = getIntent().getExtras().get("Seller").toString();
+        }
+
+        //type = getIntent().getExtras().get("Seller").toString();
 
        /* productRef = FirebaseDatabase.getInstance().getReference().child( "Product" );*/
 
@@ -66,9 +82,21 @@ public class Ladies_Dresses extends AppCompatActivity {
                             @Override
                             public void onClick(View view) {
 
-                                Intent intent = new Intent(Ladies_Dresses.this, ProductDetailsActivity.class);
-                                intent.putExtra("pid", product.getPid());
-                                startActivity(intent);
+                                //if it is seller, seller direct to update details
+                                if (type.equals( "Seller" )){
+
+                                    Intent intent = new Intent(Ladies_Dresses.this, SellerMaintainProductsActivity.class);
+                                    intent.putExtra("pid", product.getPid());
+                                    startActivity(intent);
+                                }
+                                //if it is customer, customer direct to product details activity
+                                else{
+                                    Intent intent = new Intent(Ladies_Dresses.this, ProductDetailsActivity.class);
+                                    intent.putExtra("pid", product.getPid());
+                                    startActivity(intent);
+                                }
+
+
                             }
                         } );
 

@@ -56,11 +56,11 @@ public class NavDrawer extends AppCompatActivity
     RecyclerView.LayoutManager layoutManager;
     private TextView usernametxt;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_nav_drawer);
+
 
 
         TabLayout tabLayout = findViewById (R.id.tablayout);

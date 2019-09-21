@@ -72,7 +72,7 @@ public class CartActivity extends AppCompatActivity {
         super.onStart();
 
         //call the method
-        checkOrderState();
+        //checkOrderState();
 
         //to preview total price in the cart activity itself
         // txtTotalAmount.setText(String.valueOf(overallTotalPrice));
@@ -161,7 +161,7 @@ public class CartActivity extends AppCompatActivity {
     }
 
     //to check the shipping order state
-    private void checkOrderState(){
+   /* private void checkOrderState(){
 
         DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getCname());
 
@@ -206,5 +206,5 @@ public class CartActivity extends AppCompatActivity {
 
             }
         } );
-    }
+    }*/
 }

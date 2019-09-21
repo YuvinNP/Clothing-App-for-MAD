@@ -50,6 +50,7 @@ public class All_items extends Fragment {
         recyclerView.setLayoutManager (layoutManager);
 
 
+
        /* PagerAdapter pagerAdapter = new PagerAdapter();
         recyclerView.setAdapter(pagerAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());

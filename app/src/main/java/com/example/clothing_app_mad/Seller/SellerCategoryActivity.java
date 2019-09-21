@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.clothing_app_mad.MainActivity;
+import com.example.clothing_app_mad.NavDrawer;
 import com.example.clothing_app_mad.R;
 
 public class SellerCategoryActivity extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class SellerCategoryActivity extends AppCompatActivity {
     private ImageView Girls, Boys;
     private ImageView BoysAccessories, GirlsAccessories;
 
-    private Button logoutBtn, chkOrderBtn, maintainBtn;
+    private Button logoutBtn, chkOrderBtn, updateBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class SellerCategoryActivity extends AppCompatActivity {
 
         logoutBtn = (Button) findViewById(R.id.logout_Btn);
         chkOrderBtn = (Button) findViewById( R.id.logout_Btn );
-        maintainBtn = (Button) findViewById( R.id.maintain_Btn );
+        updateBtn = (Button) findViewById( R.id.update_Btn );
 
         WomenDresses = (ImageView) findViewById(R.id.female_dresses);
         WomenSkirts = (ImageView) findViewById(R.id.female_skirts);
@@ -62,6 +63,16 @@ public class SellerCategoryActivity extends AppCompatActivity {
                 Intent intent = new Intent( SellerCategoryActivity.this, SellerNewOrdersActivity.class );
                 startActivity( intent );
 
+            }
+        } );
+
+        updateBtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent( SellerCategoryActivity.this, NavDrawer.class );
+                intent.putExtra("Seller", "Seller");
+                startActivity( intent );
             }
         } );
 
