@@ -117,21 +117,7 @@
 
 
     </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="25dp"
-        android:fontFamily="@font/manjariregular"
-        android:text="Shipping Address"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="24sp" />
-</LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -145,19 +131,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             >
 
-            <RadioButton
-                android:layout_width="300dp"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/manjariregular"
-                android:text=" Address Provided with Account"
+                android:text="@string/email"
                 android:textSize="18sp" />
 
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/manjariregular"
+                android:text="test123@gmail.com"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -175,25 +170,41 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
-            >
+            android:layout_marginBottom="2dp">
 
-            <RadioButton
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/manjariregular"
-                android:text=" Other "
+                android:text="Shipping Address"
                 android:textSize="18sp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/manjariregular"
+                android:text="Addressline 1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/manjariregular"
+                android:text="Addressline 2"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/manjariregular"
+                android:text="Addressline 3"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="16sp" />
+
         </LinearLayout>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/paymentGray"
-            android:layout_marginTop="30dp">
-
-        </View>
 
 
     </LinearLayout>
@@ -206,7 +217,7 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="25dp"
             android:fontFamily="@font/manjariregular"
@@ -219,7 +230,7 @@
             android:orientation="horizontal"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="25dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="2dp"
             >
 
             <Button

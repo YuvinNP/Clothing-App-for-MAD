@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.clothing_app_mad.Entites.Seller;
+import com.example.clothing_app_mad.Login;
 import com.example.clothing_app_mad.NavDrawer;
 import com.example.clothing_app_mad.Prevalent.Prevalent;
 import com.example.clothing_app_mad.R;
@@ -151,7 +152,7 @@ public class SellerRegiser extends AppCompatActivity {
                                                         seller = dataSnapshot.child ("Seller").child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ()).getValue (Seller.class);
                                                         Prevalent.currentOnlineSeller = seller;
                                                         Toast.makeText(getApplicationContext(), "Registration Successfull", Toast.LENGTH_LONG).show();
-                                                        Intent intent = new Intent(SellerRegiser.this, NavDrawer.class);
+                                                        Intent intent = new Intent(SellerRegiser.this, Login.class);
                                                         startActivity(intent);
                                                     }
                                                     else {

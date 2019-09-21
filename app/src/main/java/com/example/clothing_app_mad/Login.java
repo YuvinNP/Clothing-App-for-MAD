@@ -167,19 +167,24 @@ public class Login extends AppCompatActivity {
                             if (task.isSuccessful ()) {
                                 System.out.println ("LOGIN: " + dataSnapshot.child (parentDbName).child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ()));
                                 progressDialog.dismiss ();
-                                Toast.makeText (Login.this, "Signed In", Toast.LENGTH_SHORT).show ();
 
-                                if (parentDbName.equals ("Customer")) {
+                                if (parentDbName.equals ("Customer") && customer!=null) {
+                                    Toast.makeText (Login.this, "Signed In", Toast.LENGTH_SHORT).show ();
                                     Prevalent.currentOnlineUser = customer;
                                     Intent intent = new Intent (Login.this, NavDrawer.class);
                                     intent.addFlags (Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    System.out.println ("CUSTOMER");
                                     startActivity (intent);
 
-                                } else {
+                                } else if(parentDbName.equals ("Seller") && seller!=null){
+                                    Toast.makeText (Login.this, "Signed In", Toast.LENGTH_SHORT).show ();
                                     Prevalent.currentOnlineSeller = seller;
                                     Intent intent = new Intent (Login.this, SellerCategoryActivity.class);
                                     intent.addFlags (Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    System.out.println ("SELLER");
                                     startActivity (intent);
+                                }else {
+                                    Toast.makeText (Login.this, "Sign In failed!!!", Toast.LENGTH_LONG).show ();
                                 }
 
 
