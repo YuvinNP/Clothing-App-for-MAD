@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.clothing_app_mad.Ladies.Ladies_Dresses;
 import com.example.clothing_app_mad.MainActivity;
 import com.example.clothing_app_mad.NavDrawer;
+import com.example.clothing_app_mad.Prevalent.Prevalent;
 import com.example.clothing_app_mad.R;
 
 public class SellerCategoryActivity extends AppCompatActivity {
@@ -27,7 +29,7 @@ public class SellerCategoryActivity extends AppCompatActivity {
         setContentView( R.layout.activity_seller_category );
 
         logoutBtn = (Button) findViewById(R.id.logout_Btn);
-        chkOrderBtn = (Button) findViewById( R.id.logout_Btn );
+        chkOrderBtn = (Button) findViewById( R.id.checkOrder_Btn );
         updateBtn = (Button) findViewById( R.id.update_Btn );
 
         WomenDresses = (ImageView) findViewById(R.id.female_dresses);
@@ -70,6 +72,7 @@ public class SellerCategoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //only to test ladies dresses correct one is nave drawer
                 Intent intent = new Intent( SellerCategoryActivity.this, NavDrawer.class );
                 intent.putExtra("Seller", "Seller");
                 startActivity( intent );
@@ -80,9 +83,10 @@ public class SellerCategoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent( SellerCategoryActivity.this, SellerAddNewProductActivity.class);
-                intent.putExtra("category","WomenDresses");
-                startActivity(intent);
+                    Intent intent = new Intent( SellerCategoryActivity.this, SellerAddNewProductActivity.class );
+                    intent.putExtra( "category", "WomenDresses" );
+                    startActivity( intent );
+
             }
         });
 

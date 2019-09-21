@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.clothing_app_mad.Entites.Product;
+import com.example.clothing_app_mad.Prevalent.Prevalent;
 import com.example.clothing_app_mad.ProductDetailsActivity;
 import com.example.clothing_app_mad.R;
 import com.example.clothing_app_mad.Seller.SellerMaintainProductsActivity;
@@ -39,7 +40,7 @@ public class Ladies_Dresses extends AppCompatActivity {
         setContentView( R.layout.activity_ladies__dresses );
 
 
-        //to preview updated products by seller
+        //validation to check whether login person is the seller
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
@@ -48,7 +49,7 @@ public class Ladies_Dresses extends AppCompatActivity {
             type = getIntent().getExtras().get("Seller").toString();
         }
 
-        //type = getIntent().getExtras().get("Seller").toString();
+
 
        /* productRef = FirebaseDatabase.getInstance().getReference().child( "Product" );*/
 
@@ -71,7 +72,7 @@ public class Ladies_Dresses extends AppCompatActivity {
         FirebaseRecyclerAdapter<Product, ProductViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Product, ProductViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int i, @NonNull final Product product) {
+                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Product product) {
 
                         holder.txtProductName.setText( product.getPname() );
                         holder.txtProductPrice.setText( product.getPrice() );
@@ -83,7 +84,7 @@ public class Ladies_Dresses extends AppCompatActivity {
                             public void onClick(View view) {
 
                                 //if it is seller, seller direct to update details
-                                if (type.equals( "Seller" )){
+                                if (Prevalent.currentOnlineUser == null){
 
                                     Intent intent = new Intent(Ladies_Dresses.this, SellerMaintainProductsActivity.class);
                                     intent.putExtra("pid", product.getPid());

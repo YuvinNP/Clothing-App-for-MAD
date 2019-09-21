@@ -56,12 +56,22 @@ public class NavDrawer extends AppCompatActivity
     RecyclerView.LayoutManager layoutManager;
     private TextView usernametxt;
 
+    //to preview updated products by seller
+    private String type = "";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_nav_drawer);
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
 
+        if (bundle != null)
+        {
+            type = getIntent().getExtras().get("Seller").toString();
+        }
 
         TabLayout tabLayout = findViewById (R.id.tablayout);
         tabLayout.addTab (tabLayout.newTab ().setText ("All"));
@@ -151,6 +161,9 @@ public class NavDrawer extends AppCompatActivity
             Picasso.get ().load (Prevalent.currentOnlineUser.getImage ()).into (profImageView);
             userEmail.setText (Prevalent.currentOnlineUser.getEmail ());
         }
+
+
+
     }
 
     @Override

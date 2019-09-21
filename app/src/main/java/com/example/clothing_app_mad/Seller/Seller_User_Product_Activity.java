@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 //to display the order products by a customer
 public class Seller_User_Product_Activity extends AppCompatActivity {
 
+    //recyclerview in activity_seller__user__product_
     private RecyclerView productList;
     RecyclerView.LayoutManager layoutManager;
     private DatabaseReference cartListRef;
@@ -41,13 +42,14 @@ public class Seller_User_Product_Activity extends AppCompatActivity {
         productList.setLayoutManager(layoutManager);
 
         cartListRef = FirebaseDatabase.getInstance().getReference()
-                .child("Cart List").child("Seller view").child(userID).child("Product");
+                .child("Cart List").child("Seller view").child(userID).child( "Product" );
     }
 
     @Override
     protected void onStart()
     {
         super.onStart();
+
         FirebaseRecyclerOptions<Cart> options =
                 new FirebaseRecyclerOptions.Builder<Cart>()
                         .setQuery(cartListRef, Cart.class).build();

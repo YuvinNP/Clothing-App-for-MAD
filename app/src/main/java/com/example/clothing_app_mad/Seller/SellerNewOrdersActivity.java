@@ -24,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SellerNewOrdersActivity extends AppCompatActivity {
 
+    //Recycler view in the SellerNewOrdersActivity
     private RecyclerView orderList;
     private DatabaseReference ordersRef;
     @Override
@@ -108,6 +109,7 @@ public class SellerNewOrdersActivity extends AppCompatActivity {
                     @Override
                     public SellerOrdersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
+                        //accessing the seller_order layout
                         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.seller_orders, parent, false);
                         return new SellerOrdersViewHolder(view);
                     }
@@ -132,6 +134,7 @@ public class SellerNewOrdersActivity extends AppCompatActivity {
             customerTotalPrice = itemView.findViewById(R.id.order_total_price);
             customerShippingAddress = itemView.findViewById(R.id.order_address);
             customerDateTime = itemView.findViewById(R.id.order_date_time);
+            showOrdersBtn = itemView.findViewById(R.id.show_allproduct_btn);
         }
     }
 

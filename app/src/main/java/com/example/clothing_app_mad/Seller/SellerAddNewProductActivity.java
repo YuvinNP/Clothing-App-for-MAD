@@ -127,7 +127,7 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
 
     private void storeProductInformation(){
 
-       loadingBar.setTitle("Add New Product");
+        loadingBar.setTitle("Add New Product");
         loadingBar.setMessage("Please wait, while we are adding the new product");
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.show();
