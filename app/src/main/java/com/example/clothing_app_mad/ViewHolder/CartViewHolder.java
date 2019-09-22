@@ -13,7 +13,7 @@ import com.example.clothing_app_mad.R;
 public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     public TextView txtProductName, txtProductPrice, txtProductQty;
-    /*public ImageView imageView;*/
+    public ImageView imageView;
 
     private ItemClickListner itemClickListner;
 
@@ -21,7 +21,7 @@ public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
         super( itemView );
 
-        /*imageView = (ImageView) itemView.findViewById(R.id.cart_product_image);*/
+        imageView = (ImageView) itemView.findViewById(R.id.cart_product_image);
         txtProductName = (TextView) itemView.findViewById( R.id.cart_product_name);
         txtProductPrice = (TextView) itemView.findViewById( R.id.cart_product_price);
         txtProductQty = (TextView) itemView.findViewById( R.id.cart_product_qty);

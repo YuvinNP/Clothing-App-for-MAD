@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,8 @@ import com.squareup.picasso.Picasso;
 
 public class CartActivity extends AppCompatActivity {
 
+    //get the cart_item_layout structure
+
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private Button nextbutton;
@@ -53,16 +56,16 @@ public class CartActivity extends AppCompatActivity {
         txtTotalAmount = (TextView) findViewById(R.id.total_price);
         txtCartMsg1 = (TextView) findViewById(R.id.cartMsg1);
 
+
         nextbutton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
-
                 Intent intent = new Intent(CartActivity.this, ConfirmOrderActivity.class);
-               // intent.putExtra("Total Price ", String.valueOf(overallTotalPrice));
+                intent.putExtra("Total Price ", String.valueOf(overallTotalPrice));
                 startActivity(intent);
-               // finish();
+                finish();
             }
         } );
     }
@@ -74,8 +77,7 @@ public class CartActivity extends AppCompatActivity {
         //call the method
         //checkOrderState();
 
-        //to preview total price in the cart activity itself
-        // txtTotalAmount.setText(String.valueOf(overallTotalPrice));
+
 
         //to retrive the data on the cart list table
         final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
@@ -90,14 +92,15 @@ public class CartActivity extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull final Cart cart) {
 
                 holder.txtProductName.setText(cart.getPname() );
-                holder.txtProductPrice.setText(cart.getPrice());
-                holder.txtProductQty.setText(cart.getQuantity());
-               /* Picasso.get().load (cart.getImage()).into(holder.imageView);*/
+                holder.txtProductPrice.setText("Quantity : " + cart.getPrice());
+                holder.txtProductQty.setText("Price : " + cart.getQuantity());
+                //Picasso.get().load( cart.getImage() ).into(holder.imageView);
 
-               /* int oneProductTotalPrice = (Integer.valueOf(cart.getPrice())) * (Integer.valueOf(cart.getQuantity()));
+                //to find one product Total price in the cart
+                int oneProductTotalPrice = ((Integer.valueOf(cart.getPrice())) * (Integer.valueOf(cart.getQuantity())));
 
                 overallTotalPrice = overallTotalPrice + oneProductTotalPrice;
-*/
+
                 //to remove or edit a item in the cart
              holder.itemView.setOnClickListener( new View.OnClickListener() {
                     @Override
@@ -143,6 +146,9 @@ public class CartActivity extends AppCompatActivity {
                         builder.show();
                     }
                 } );
+
+                //to preview total price in the cart activity itself
+                txtTotalAmount.setText("Total Price = Rs." + String.valueOf(overallTotalPrice));
             }
 
             @NonNull

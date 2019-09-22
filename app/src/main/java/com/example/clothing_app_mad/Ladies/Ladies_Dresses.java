@@ -58,7 +58,8 @@ public class Ladies_Dresses extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_Menu);
         recyclerView.setHasFixedSize( true );
         layoutManager = new LinearLayoutManager( this );
-        recyclerView.setLayoutManager( layoutManager );
+        recyclerView.setLayoutManager( layoutManager);
+
     }
 
     @Override

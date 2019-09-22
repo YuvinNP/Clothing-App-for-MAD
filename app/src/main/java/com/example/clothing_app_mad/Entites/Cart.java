@@ -4,6 +4,7 @@ public class Cart {
 
     private String pid, pname, price, quantity, discount;
 
+
     public Cart() {
     }
 
@@ -13,7 +14,7 @@ public class Cart {
         this.price = price;
         this.quantity = quantity;
         this.discount = discount;
-        /*this.image = image;*/
+        //this.image = image;
     }
 
     public String getPid() {
@@ -56,7 +57,7 @@ public class Cart {
         this.discount = discount;
     }
 
-  /*  public String getImage() {
+/*   public String getImage() {
         return image;
     }
 

@@ -72,8 +72,10 @@ public class SellerCategoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //only to test ladies dresses correct one is nave drawer
-                Intent intent = new Intent( SellerCategoryActivity.this, NavDrawer.class );
+                //change
+
+
+               Intent intent = new Intent( SellerCategoryActivity.this, NavDrawer.class );
                 intent.putExtra("Seller", "Seller");
                 startActivity( intent );
             }

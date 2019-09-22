@@ -57,13 +57,13 @@ public class ProductDetailsActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 //validations for the cart to add products
-                if (state.equals("Order Placed") || state.equals("Order Shipped")){
+              /*  if (state.equals("Order Placed") || state.equals("Order Shipped")){
 
                     Toast.makeText(ProductDetailsActivity.this, "you can purchase more products, once your order is shipped or confirmed...", Toast.LENGTH_LONG).show();
                 }
-                else{
+                else{*/
                     addingToCartList();
-                }
+                //}
             }
         });
     }
