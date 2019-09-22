@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.example.clothing_app_mad.Entites.Seller;
 import com.example.clothing_app_mad.Gents.Gents;
 import com.example.clothing_app_mad.Kids.Kids;
 import com.example.clothing_app_mad.Ladies.Ladies;
+import com.example.clothing_app_mad.Ladies.Ladies_Dresses;
 import com.example.clothing_app_mad.Prevalent.Prevalent;
 
+import com.example.clothing_app_mad.Seller.SellerMaintainProductsActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
@@ -131,8 +134,12 @@ public class NavDrawer extends AppCompatActivity
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(NavDrawer.this, CartActivity.class);
-                startActivity(intent);
+                if (Prevalent.currentOnlineSeller == null){
+
+                    Intent intent = new Intent(NavDrawer.this, CartActivity.class);
+                    startActivity(intent);
+
+                }
 
             }
         });
@@ -151,17 +158,15 @@ public class NavDrawer extends AppCompatActivity
         TextView userEmail = headerView.findViewById (R.id.user_email);
         CircleImageView profImageView = headerView.findViewById (R.id.user_image);
 
-        if(Prevalent.currentOnlineUser == null){
+        if (Prevalent.currentOnlineSeller == null) {
+            userNameTextView.setText (Prevalent.currentOnlineUser.getCname ());
+            Picasso.get ().load (Prevalent.currentOnlineUser.getImage ()).into (profImageView);
+            userEmail.setText (Prevalent.currentOnlineUser.getEmail ());
+        } else {
             userNameTextView.setText (Prevalent.currentOnlineSeller.getSname ());
            // Picasso.get ().load (Prevalent.currentOnlineCustomer.getImage ()).into (profImageView);
             userEmail.setText (Prevalent.currentOnlineSeller.getEmail ());
         }
-        else {
-            userNameTextView.setText (Prevalent.currentOnlineUser.getCname ());
-            Picasso.get ().load (Prevalent.currentOnlineUser.getImage ()).into (profImageView);
-            userEmail.setText (Prevalent.currentOnlineUser.getEmail ());
-        }
-
 
 
     }
@@ -217,8 +222,14 @@ public class NavDrawer extends AppCompatActivity
         if (id == R.id.nav_cart)
         {
             //go to cart activity from the navdrawer side bar
-            Intent intent = new Intent(NavDrawer.this, CartActivity.class);
-            startActivity(intent);
+            if (Prevalent.currentOnlineSeller == null){
+
+                Intent intent = new Intent(NavDrawer.this, CartActivity.class);
+                startActivity(intent);
+
+            }
+
+
         }
         else if (id == R.id.nav_search)
         {
@@ -231,8 +242,13 @@ public class NavDrawer extends AppCompatActivity
         }
         else if (id == R.id.nav_setting)
         {
-            Intent intent = new Intent(NavDrawer.this, UpdateCustomer.class);
-            startActivity(intent);
+            if (Prevalent.currentOnlineSeller == null){
+                Intent intent = new Intent(NavDrawer.this, UpdateCustomer.class);
+                startActivity(intent);
+
+            }
+
+
         }
         else if (id == R.id.nav_logout)
         {

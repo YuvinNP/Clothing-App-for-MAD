@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.clothing_app_mad.Prevalent.Prevalent;
 import com.example.clothing_app_mad.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,7 +34,7 @@ import java.util.HashMap;
 
 public class SellerAddNewProductActivity extends AppCompatActivity {
 
-    private String categoryName, description, price, pname, saveCurrentDate, saveCurrentTime ;
+    private String categoryName, Description, Price, Pname, saveCurrentDate, saveCurrentTime ;
     private Button addProductBtn;
     private ImageView InputProductImage;
     private EditText InputProductName, InputProductDescription, InputProductPrice;
@@ -52,7 +53,9 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
         categoryName = getIntent().getExtras().get("category").toString();
         Toast.makeText(this, categoryName, Toast.LENGTH_SHORT).show();
 
+        //to make a folder in storage
         productImageRef = FirebaseStorage.getInstance().getReference().child("Product Images");
+
         productsRef = FirebaseDatabase.getInstance().getReference().child("Product");
 
         addProductBtn = (Button) findViewById(R.id.btnAddProduct);
@@ -104,25 +107,24 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
     //validation
     private void validateProductData()
     {
-        pname = InputProductName.getText().toString();
-        description = InputProductDescription.getText().toString();
-        price = InputProductPrice.getText().toString();
+        Pname = InputProductName.getText().toString();
+        Description = InputProductDescription.getText().toString();
+        Price = InputProductPrice.getText().toString();
 
-        if (ImageUri == null){
-            Toast.makeText(this, "Please enter a product image...", Toast.LENGTH_SHORT).show();
-        }
-        else if (TextUtils.isEmpty(pname)){
-            Toast.makeText(this, "Please enter a product name...", Toast.LENGTH_SHORT).show();
-        }
-        else if (TextUtils.isEmpty(description)){
-            Toast.makeText(this, "Please enter a product description...", Toast.LENGTH_SHORT).show();
-        }
-        else if (TextUtils.isEmpty(price)){
-            Toast.makeText(this, "Please enter a product price...", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            storeProductInformation();
-        }
+
+
+            if (ImageUri == null) {
+                Toast.makeText( this, "Please enter a product image...", Toast.LENGTH_SHORT ).show();
+            } else if (TextUtils.isEmpty( Pname )) {
+                Toast.makeText( this, "Please enter a product name...", Toast.LENGTH_SHORT ).show();
+            } else if (TextUtils.isEmpty( Description )) {
+                Toast.makeText( this, "Please enter a product description...", Toast.LENGTH_SHORT ).show();
+            } else if (TextUtils.isEmpty( Price )) {
+                Toast.makeText( this, "Please enter a product price...", Toast.LENGTH_SHORT ).show();
+            } else {
+                storeProductInformation();
+            }
+
     }
 
     private void storeProductInformation(){
@@ -142,10 +144,11 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
 
         productRandomKey = saveCurrentDate + saveCurrentTime;
 
-        final StorageReference filePath = productImageRef.child(ImageUri.getLastPathSegment() + productRandomKey + ".jpg");
+        final StorageReference filePath = productImageRef.child(ImageUri.getLastPathSegment() + productRandomKey);
 
         final UploadTask uploadTask = filePath.putFile(ImageUri);
 
+        //if there is any error while uploading image
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
@@ -170,6 +173,7 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
                         downloadImageUrl = filePath.getDownloadUrl().toString();
                         return filePath.getDownloadUrl();
                     }
+                    //to tell the custmer task is successful
                 }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                     @Override
                     public void onComplete(@NonNull Task<Uri> task) {
@@ -191,13 +195,13 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
 
         HashMap<String, Object> productMap = new HashMap<>();
         productMap.put("pid", productRandomKey);
-        productMap.put("pname", pname);
+        productMap.put("pname", Pname);
         productMap.put("date", saveCurrentDate);
         productMap.put("time", saveCurrentTime);
-        productMap.put("description", description);
+        productMap.put("description", Description);
         productMap.put("image", downloadImageUrl);
         productMap.put("category", categoryName);
-        productMap.put("price", price);
+        productMap.put("price", Price);
 
         productsRef.child(productRandomKey).updateChildren(productMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -214,7 +218,7 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
                         else {
                             loadingBar.dismiss();
                             String message = task.getException().toString();
-                            Toast.makeText( SellerAddNewProductActivity.this, "Error: "+ message,Toast.LENGTH_SHORT).show();
+                            Toast.makeText( SellerAddNewProductActivity.this, "Error: "+ message,Toast.LENGTH_LONG).show();
                         }
                     }
                 });

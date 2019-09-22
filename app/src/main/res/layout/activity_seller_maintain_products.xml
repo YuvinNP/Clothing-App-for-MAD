@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="27dp"
+            android:layout_marginTop="30dp"
             android:text="Update Product Details"
             android:textAlignment="center"
             android:textSize="28sp"
@@ -30,18 +30,19 @@
         <ImageView
             android:id="@+id/product_image_update"
             android:layout_width="match_parent"
-            android:layout_margin="15dp"
+            android:layout_margin="25dp"
             android:layout_below="@+id/updatetxtView"
             android:layout_height="300dp"
             android:scaleType="centerCrop" />
 
        <EditText
           android:id="@+id/product_name_update"
-          android:layout_width="match_parent"
+          android:layout_width="300dp"
           android:layout_height="wrap_content"
           android:hint="Product Name"
-            android:layout_below="@+id/product_image_update"
+           android:layout_below="@+id/product_image_update"
           android:textAlignment="center"
+           android:layout_centerHorizontal="true"
            android:layout_marginTop="20dp"
           android:textSize="20dp"
           android:textStyle="bold"
@@ -49,28 +50,30 @@
 
         <EditText
             android:id="@+id/product_price_update"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/product_name_update"
             android:hint="Product Price"
             android:textAlignment="center"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:textSize="18dp"
             android:textColor="@color/GradientBlue"/>
 
         <EditText
             android:id="@+id/product_description_update"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/product_price_update"
             android:hint="Product description"
             android:textAlignment="center"
+            android:layout_centerHorizontal="true"
             android:textSize="18dp"
             android:layout_marginTop="10dp"
             android:textColor="@color/GradientBlue"/>
 
        <Button
-            android:id="@+id/product_update_Btn"
+            android:id="@+id/product_update_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/GradientBlue"
@@ -78,8 +81,23 @@
             android:layout_marginTop="40dp"
            android:layout_marginLeft="15dp"
            android:layout_marginRight="15dp"
+           android:layout_centerHorizontal="true"
             android:text="Apply Changes"
             android:layout_below="@+id/product_description_update"/>
+
+        <Button
+            android:id="@+id/product_delete_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/GradientBlue"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="Delete Product"
+            android:layout_below="@+id/product_update_btn"/>
 
     </RelativeLayout>
     </ScrollView>

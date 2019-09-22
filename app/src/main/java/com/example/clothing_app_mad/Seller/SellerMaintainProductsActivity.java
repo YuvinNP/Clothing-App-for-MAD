@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 public class SellerMaintainProductsActivity extends AppCompatActivity {
 
-    private Button productUpdateBtn;
+    private Button productUpdateBtn, productDeleteBtn;
     private EditText name, price, description;
     private ImageView imageView;
 
@@ -41,7 +41,8 @@ public class SellerMaintainProductsActivity extends AppCompatActivity {
         productID = getIntent().getStringExtra("pid");
         productRef = FirebaseDatabase.getInstance().getReference().child( "Product" ).child(productID);
 
-        productUpdateBtn = findViewById(R.id.product_update_Btn);
+        productUpdateBtn = findViewById(R.id.product_update_btn);
+        productDeleteBtn = findViewById( R.id.product_delete_btn );
         name = findViewById(R.id.product_name_update);
         price = findViewById(R.id.product_price_update);
         description = findViewById(R.id.product_description_update);
@@ -56,7 +57,31 @@ public class SellerMaintainProductsActivity extends AppCompatActivity {
                 applyChanges();
             }
         } );
+
+        productDeleteBtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                deleteProduct();
+            }
+        } );
     }
+
+    private void deleteProduct() {
+
+        productRef.removeValue().addOnCompleteListener( new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+                Toast.makeText( SellerMaintainProductsActivity.this, "The product is deleted successfully...", Toast.LENGTH_LONG ).show();
+
+              /*  Intent intent = new Intent(SellerMaintainProductsActivity.this, SellerCategoryActivity.class);
+                startActivity(intent);
+                finish(); */
+            }
+        } );
+    }
+
 
     private void applyChanges(){
 
