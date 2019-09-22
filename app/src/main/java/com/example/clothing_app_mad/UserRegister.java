@@ -51,12 +51,12 @@ public class UserRegister extends AppCompatActivity {
         backBtn = findViewById(R.id.backBtnR);
         signupBtn = findViewById(R.id.signupbtn);
         name = findViewById(R.id.name);
-        email = findViewById(R.id.semail);
+        email = findViewById(R.id.email);
         contactno = findViewById(R.id.contactNo);
         crpwrd = findViewById(R.id.crpwrd);
         cnpwrd = findViewById(R.id.confpwrd);
-        addressLine1 = findViewById (R.id.saddress1);
-        addressLine2 = findViewById (R.id.saddress2);
+        addressLine1 = findViewById (R.id.address1);
+        addressLine2 = findViewById (R.id.address2);
         addressLine3 = findViewById (R.id.address3);
 
         childCountDb = FirebaseDatabase.getInstance().getReference().child("Customer");
@@ -171,8 +171,9 @@ public class UserRegister extends AppCompatActivity {
 
                                         if(task.isSuccessful()){
 
-
+                                           currentCustomerID = FirebaseAuth.getInstance ().getCurrentUser ().getUid ();
                                             Customer customer = new Customer (
+                                                    currentCustomerID,
                                                     cname,
                                                     cemail,
                                                     contactNo,
@@ -194,7 +195,7 @@ public class UserRegister extends AppCompatActivity {
                                                         customer = dataSnapshot.child ("Customer").child (FirebaseAuth.getInstance ().getCurrentUser ().getUid ()).getValue (Customer.class);
                                                         Prevalent.currentOnlineUser = customer;
                                                         Toast.makeText(getApplicationContext(), "Registration Successfull", Toast.LENGTH_LONG).show();
-                                                        Intent intent = new Intent(UserRegister.this, NavDrawer.class);
+                                                        Intent intent = new Intent(UserRegister.this, Login.class);
                                                         startActivity(intent);
                                                     }
                                                     else {

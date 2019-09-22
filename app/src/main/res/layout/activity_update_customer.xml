@@ -50,22 +50,28 @@
                     android:id="@+id/textView4"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
                     android:fontFamily="@font/manjariregular"
                     android:text="@string/updateprofile"
                     android:textColor="@color/common_google_signin_btn_text_dark_default"
                     android:textSize="30sp" />
 
-                <ImageView
-                    android:id="@+id/productImage"
-                    android:layout_width="170dp"
-                    android:layout_height="120dp"
-                    android:layout_marginLeft="60dp"
-                    android:background="@android:color/black"
-                    android:cropToPadding="false"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_menu_camera"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userimage"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:background="@drawable/profile"
+                    android:layout_marginLeft="100dp"/>
+
+                <TextView
+                    android:id="@+id/changepropic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:fontFamily="@font/manjariregular"
+                    android:text="Update Profile Image"
+                    android:textColor="@color/colorText"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textView5"
@@ -75,7 +81,8 @@
                     android:fontFamily="@font/fredokaoneregular"
                     android:text="@string/name"
                     android:textColor="@color/common_google_signin_btn_text_dark_default"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    />
 
                 <EditText
                     android:id="@+id/sname"
@@ -116,22 +123,21 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/contactNo"
+                    android:id="@+id/contactno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/phone"
-                    android:ems="10"
                     android:fontFamily="@font/fredokaoneregular"
+                    android:ems="10"
+                    android:drawableStart="@drawable/phone"
                     android:inputType="phone"
-                    android:textColor="@color/common_google_signin_btn_text_dark_default"
-                    />
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:id="@+id/textViewName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/fredokaoneregular"
-                    android:text="@string/name"
+                    android:text="@string/address"
                     android:textColor="@color/common_google_signin_btn_text_dark_default"
                     android:textSize="18sp" />
 
@@ -165,7 +171,7 @@
 
 
                 <Button
-                    android:id="@+id/signupbtn"
+                    android:id="@+id/updateBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"

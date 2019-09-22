@@ -27,10 +27,13 @@ public class SellerNewOrdersActivity extends AppCompatActivity {
     //Recycler view in the SellerNewOrdersActivity
     private RecyclerView orderList;
     private DatabaseReference ordersRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_seller_new_orders );
+
+
 
         ordersRef = FirebaseDatabase.getInstance().getReference().child( "Orders" );
 
@@ -134,7 +137,9 @@ public class SellerNewOrdersActivity extends AppCompatActivity {
             customerTotalPrice = itemView.findViewById(R.id.order_total_price);
             customerShippingAddress = itemView.findViewById(R.id.order_address);
             customerDateTime = itemView.findViewById(R.id.order_date_time);
+
             showOrdersBtn = itemView.findViewById(R.id.show_allproduct_btn);
+
         }
     }
 

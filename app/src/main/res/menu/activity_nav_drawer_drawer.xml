@@ -19,6 +19,11 @@
             android:title="Notification"
             />
         <item
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/feedback"
+            android:title="Feedback"
+            />
+        <item
             android:id="@+id/nav_setting"
             android:icon="@drawable/ic_menu_manage"
             android:title="Settings"

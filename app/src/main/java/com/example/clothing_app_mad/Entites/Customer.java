@@ -20,7 +20,8 @@ public class Customer {
 
     private String password;
 
-    public Customer(String cname, String email, int contactNo, String addressLine1, String addressLine2, String district, String password) {
+    public Customer(String customerID, String cname, String email, int contactNo, String addressLine1, String addressLine2, String district, String password) {
+        this.customerID = customerID;
         this.cname = cname;
         this.image = image;
         this.email = email;

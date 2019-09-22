@@ -162,7 +162,6 @@
                     android:hint="@string/address3"
                     android:inputType="textPersonName"
                     android:textColor="@color/colorText" />
->>>>>>> Stashed changes
                 <TextView
                     android:id="@+id/textView11"
                     android:layout_width="match_parent"
