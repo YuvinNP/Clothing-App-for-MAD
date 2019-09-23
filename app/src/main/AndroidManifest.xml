@@ -23,13 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SellerHome" />
+        <activity android:name=".Seller.SellerHome" />
         <activity android:name=".AddFeedback" />
         <activity android:name=".PaymentMethod" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".Seller.SellerMaintainProductsActivity" />
         <activity android:name=".Seller.SellerNewOrdersActivity" />
-        <activity android:name=".Seller.Seller_User_Product_Activity" />
+        <activity android:name=".Seller.Seller_User_order_Product_Activity" />
         <activity android:name=".Seller.SellerRegiser" />
         <activity android:name=".Gents.Gents_TShirts" />
         <activity android:name=".Gents.Gents_Shirts" />

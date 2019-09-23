@@ -19,6 +19,7 @@ import com.example.clothing_app_mad.Entites.Customer;
 import com.example.clothing_app_mad.Entites.Seller;
 import com.example.clothing_app_mad.Prevalent.Prevalent;
 import com.example.clothing_app_mad.Seller.SellerCategoryActivity;
+import com.example.clothing_app_mad.Seller.SellerHome;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -179,7 +180,7 @@ public class Login extends AppCompatActivity {
                                 } else if(parentDbName.equals ("Seller") && seller!=null){
                                     Toast.makeText (Login.this, "Signed In", Toast.LENGTH_SHORT).show ();
                                     Prevalent.currentOnlineSeller = seller;
-                                    Intent intent = new Intent (Login.this, SellerCategoryActivity.class);
+                                    Intent intent = new Intent (Login.this, SellerHome.class);
                                     intent.addFlags (Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     System.out.println ("SELLER");
                                     startActivity (intent);
