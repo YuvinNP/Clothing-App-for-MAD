@@ -46,7 +46,7 @@ public class ViewCustomers extends AppCompatActivity {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_view_customers);
 
-        search = findViewById (R.id.searchfield);
+        //search = findViewById (R.id.searchfield);
         recyclerView = findViewById (R.id.customer_list);
         recyclerView.setHasFixedSize (true);
         layoutManager = new LinearLayoutManager (this);

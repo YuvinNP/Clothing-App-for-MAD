@@ -60,8 +60,6 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="5dp"
                         android:src="@drawable/pc" />
-
-
                 </LinearLayout>
 
                 <TextView

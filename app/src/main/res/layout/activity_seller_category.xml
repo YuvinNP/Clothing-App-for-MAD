@@ -76,6 +76,14 @@
                         android:src="@drawable/d1" />
                 </LinearLayout>
 
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Women Dresses"
+                   android:layout_centerHorizontal="true"
+                   android:layout_marginTop="110dp"
+                   android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                   />
             </androidx.cardview.widget.CardView>
 
             <!-- row 1 column 2-->
@@ -84,9 +92,9 @@
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
 
@@ -104,6 +112,15 @@
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/d1" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="110dp"
+                    android:text="Women Skirts"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
             </androidx.cardview.widget.CardView>
 
             <!-- row 1 column 3-->
@@ -132,6 +149,16 @@
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/d1" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Women Tops"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="110dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    />
+
             </androidx.cardview.widget.CardView>
 
 
@@ -157,10 +184,19 @@
                     <ImageView
                         android:id="@+id/female_trousers"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/d1" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="110dp"
+                    android:text="Women Trousers"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
             </androidx.cardview.widget.CardView>
 
             <!-- row 2 column 2-->
@@ -169,8 +205,8 @@
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
@@ -189,6 +225,16 @@
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/d1" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gents Shirts"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="110dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    />
+
             </androidx.cardview.widget.CardView>
 
             <!-- row 2 column 3-->
@@ -217,6 +263,16 @@
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/d1" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gents TShirts"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="110dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    />
+
             </androidx.cardview.widget.CardView>
 
             <!-- row 3 column 1-->
@@ -245,6 +301,16 @@
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/d1" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gents Trousers"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="110dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    />
+
             </androidx.cardview.widget.CardView>
 
             <!-- row 3 column 2-->
@@ -253,8 +319,8 @@
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
@@ -273,6 +339,16 @@
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/d1" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gents Shorts"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="110dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    />
+
             </androidx.cardview.widget.CardView>
 
             <!-- row 3 column 3-->
@@ -301,7 +377,18 @@
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/d1" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Girl Items"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="110dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    />
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- row 4 column 1-->
             <androidx.cardview.widget.CardView
@@ -329,16 +416,26 @@
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/d1" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Boy Items"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="110dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    />
+
             </androidx.cardview.widget.CardView>
 
-            <!-- row 4 column 2-->
+            <!-- row 4 column 1-->
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
@@ -357,6 +454,16 @@
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/d1" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Girl accessories"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="110dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    />
+
             </androidx.cardview.widget.CardView>
 
             <!-- row 4 column 3-->
@@ -380,11 +487,21 @@
 
                     <ImageView
                         android:id="@+id/boy_accessories"
-                        android:layout_width="wrap_content"
+                        android:layout_width="56dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/d1" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Boy Accessories"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="110dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    />
+
             </androidx.cardview.widget.CardView>
         </GridLayout>
 

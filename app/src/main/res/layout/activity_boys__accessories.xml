@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Kids.Boys_Accessories"
-    android:background="@drawable/formback">
+    tools:context=".Kids.Boys_Accessories">
 
     <TextView
         android:id="@+id/boys_acc_txt"
