@@ -134,7 +134,7 @@ public class NavDrawer extends AppCompatActivity
             @Override
             public void onClick(View view) {
 
-                if (Prevalent.currentOnlineSeller == null){
+                if (Prevalent.currentOnlineUser != null){
 
                     Intent intent = new Intent(NavDrawer.this, CartActivity.class);
                     startActivity(intent);
@@ -158,11 +158,13 @@ public class NavDrawer extends AppCompatActivity
         TextView userEmail = headerView.findViewById (R.id.user_email);
         CircleImageView profImageView = headerView.findViewById (R.id.user_image);
 
-        if (Prevalent.currentOnlineSeller == null) {
+        if (Prevalent.currentOnlineUser != null) {
+
             userNameTextView.setText (Prevalent.currentOnlineUser.getCname ());
             Picasso.get ().load (Prevalent.currentOnlineUser.getImage ()).into (profImageView);
             userEmail.setText (Prevalent.currentOnlineUser.getEmail ());
         } else {
+            System.out.println ("SELLER");
             userNameTextView.setText (Prevalent.currentOnlineSeller.getSname ());
            // Picasso.get ().load (Prevalent.currentOnlineCustomer.getImage ()).into (profImageView);
             userEmail.setText (Prevalent.currentOnlineSeller.getEmail ());
@@ -243,7 +245,7 @@ public class NavDrawer extends AppCompatActivity
         }
         else if (id == R.id.nav_feedback)
         {
-            Intent intent = new Intent(NavDrawer.this, AddFeedback.class);
+            Intent intent = new Intent(NavDrawer.this, ViewFeedbackCustomer.class);
             startActivity(intent);
         }
         else if (id == R.id.nav_setting)

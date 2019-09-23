@@ -63,7 +63,10 @@ public class CartActivity extends AppCompatActivity {
 
 
                 Intent intent = new Intent(CartActivity.this, ConfirmOrderActivity.class);
-                intent.putExtra("Total Price ", String.valueOf(overallTotalPrice));
+                System.out.println (String.valueOf(overallTotalPrice) + "Streret");
+                System.out.println (overallTotalPrice);
+                intent.putExtra("Total Price ", overallTotalPrice);
+                Prevalent.total = overallTotalPrice;
                 startActivity(intent);
                 finish();
             }

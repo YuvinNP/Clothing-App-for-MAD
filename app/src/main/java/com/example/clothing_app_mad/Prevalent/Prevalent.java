@@ -9,6 +9,12 @@ public class Prevalent {
 
     public static Seller currentOnlineSeller;
 
+    public static int total;
+
+    public static String address;
+
+    public static String city;
+
     public static final String userLoginName = "UserEmail";
     public static final String userPassword = " UserPassword";
 }

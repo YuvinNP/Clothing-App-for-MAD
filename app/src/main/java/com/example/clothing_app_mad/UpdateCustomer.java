@@ -79,7 +79,7 @@ public class UpdateCustomer extends AppCompatActivity {
         name.setText (Prevalent.currentOnlineUser.getCname ());
         email.setText (Prevalent.currentOnlineUser.getEmail ());
         System.out.println (Prevalent.currentOnlineUser.getContactNo ());
-       // contactNo.setText (Prevalent.currentOnlineUser.getContactNo ());
+        contactNo.setText (""+Prevalent.currentOnlineUser.getContactNo ());
         address1.setText (Prevalent.currentOnlineUser.getAddressLine1 ());
         address2.setText (Prevalent.currentOnlineUser.getAddressLine2 ());
         address3.setText (Prevalent.currentOnlineUser.getDistrict ());
@@ -156,7 +156,7 @@ public class UpdateCustomer extends AppCompatActivity {
                 HashMap<String, Object> usermap = new HashMap<> ();
                 usermap.put ("cname", name.getText ().toString ());
                 usermap.put ("email", email.getText ().toString ());
-               // usermap.put ("contactNo", Integer.parseInt (contactNo.getText ().toString ()));
+                usermap.put ("contactNo", Integer.parseInt (contactNo.getText ().toString ()));
                 usermap.put ("addressLine1", address1.getText ().toString ());
                 usermap.put ("addressLine2", address2.getText ().toString ());
                 usermap.put ("district", address3.getText ().toString ());
@@ -164,7 +164,7 @@ public class UpdateCustomer extends AppCompatActivity {
 
                 Prevalent.currentOnlineUser.setCname (name.getText ().toString ());
                 Prevalent.currentOnlineUser.setEmail ( email.getText ().toString ());
-//                Prevalent.currentOnlineUser.setContactNo (Integer.parseInt (contactNo.getText ().toString ()));
+                Prevalent.currentOnlineUser.setContactNo (Integer.parseInt (contactNo.getText ().toString ()));
                 Prevalent.currentOnlineUser.setAddressLine1 (address1.getText ().toString ());
                 Prevalent.currentOnlineUser.setAddressLine2 (address2.getText ().toString ());
                 Prevalent.currentOnlineUser.setDistrict (address3.getText ().toString ());

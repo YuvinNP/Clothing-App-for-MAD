@@ -11,10 +11,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.clothing_app_mad.Entites.Seller;
 import com.example.clothing_app_mad.Login;
+import com.example.clothing_app_mad.MainActivity;
 import com.example.clothing_app_mad.NavDrawer;
 import com.example.clothing_app_mad.Prevalent.Prevalent;
 import com.example.clothing_app_mad.R;
@@ -31,7 +33,8 @@ import com.google.firebase.database.ValueEventListener;
 public class SellerRegiser extends AppCompatActivity {
 
     private EditText name, email, address1, address2, address3, contact, confirmP, createP;
-    Button sregBtn;
+    Button sregBtn,backbtn;
+    TextView login1, login2;
     DatabaseReference dbref;
     Seller seller;
     ProgressDialog progressbar;
@@ -51,6 +54,9 @@ public class SellerRegiser extends AppCompatActivity {
         createP = findViewById (R.id.crpwrd);
         confirmP = findViewById (R.id.confpwrd);
         sregBtn = findViewById (R.id.signupbtn);
+        login1 = findViewById (R.id.textView8);
+        login2 = findViewById (R.id.textView9);
+        backbtn = findViewById (R.id.backBtnR);
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressbar = new ProgressDialog (this);
@@ -60,6 +66,29 @@ public class SellerRegiser extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sellerRegister ();
+            }
+        });
+
+        backbtn.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View view) {
+
+                startActivity (new Intent (SellerRegiser.this, MainActivity.class));
+
+            }
+        });
+
+        login1.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View view) {
+                startActivity (new Intent (SellerRegiser.this,Login.class));
+            }
+        });
+
+        login2.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View view) {
+                startActivity (new Intent (SellerRegiser.this,Login.class));
             }
         });
     }

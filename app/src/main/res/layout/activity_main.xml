@@ -21,7 +21,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="450dp"
         android:orientation="vertical">
 
         <Button
@@ -46,16 +46,15 @@
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/sellerreg"
+            android:id="@+id/selllerreg"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/mainbtn1"
             android:fontFamily="@font/fredokaoneregular"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:textSize="18sp"
-            android:visibility="visible"
-            tools:text="@string/becomeAseller" />
+            android:text="@string/becomeAseller"
+            android:textColor="@color/GradientBlue"
+            android:textSize="18sp" />
     </LinearLayout>
         </RelativeLayout>
     </ScrollView>

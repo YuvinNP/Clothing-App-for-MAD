@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         join = findViewById(R.id.joinBtn);
         signin = findViewById(R.id.signInbtn);
-        becomSeller = findViewById (R.id.sellerreg);
+        becomSeller = findViewById (R.id.selllerreg);
 
         join.setOnClickListener(new View.OnClickListener() {
             @Override

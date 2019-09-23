@@ -25,13 +25,15 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
     private EditText nameTxt, phoneTxt, addressTxt, cityTxt;
     private Button confirmOrderBtn;
-    private String totalAmount ="";
+    private int totalAmount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_confirm_order );
 
-        totalAmount = getIntent().getStringExtra("Total Price");
+
+//        totalAmount = getIntent().getExtras().getInt ("Total");
+//        System.out.println (totalAmount);
         //Toast.makeText(this, "Total Price = Rs." + totalAmount, Toast.LENGTH_LONG).show();
 
         confirmOrderBtn = (Button) findViewById(R.id.confirmBtn);
@@ -40,6 +42,11 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         addressTxt = (EditText) findViewById(R.id.shipmentAddress);
         cityTxt = (EditText) findViewById(R.id.shipmentcity);
 
+
+        nameTxt.setText (Prevalent.currentOnlineUser.getCname ());
+        phoneTxt.setText (""+Prevalent.currentOnlineUser.getContactNo ());
+        addressTxt.setText (Prevalent.currentOnlineUser.getAddressLine1 () + ", " + Prevalent.currentOnlineUser.getAddressLine2 ());
+        cityTxt.setText (Prevalent.currentOnlineUser.getDistrict ());
         confirmOrderBtn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,8 +124,11 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
                                         Toast.makeText( ConfirmOrderActivity.this, "Your final order has been placed successfully", Toast.LENGTH_SHORT ).show();
 
-                                        Intent intent = new Intent( ConfirmOrderActivity.this, NavDrawer.class );
-
+                                        Intent intent = new Intent( ConfirmOrderActivity.this, PaymentActivity.class );
+                                        intent.putExtra ("Total", totalAmount);
+                                        intent.putExtra ("address", addressTxt.getText ());
+                                        Prevalent.address = addressTxt.getText ().toString ();
+                                        Prevalent.city = cityTxt.getText ().toString ();
                                         //to stop the user comming back to the confirm order activity
                                         intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity( intent );

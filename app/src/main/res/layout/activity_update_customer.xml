@@ -126,11 +126,12 @@
                     android:id="@+id/contactno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/fredokaoneregular"
-                    android:ems="10"
                     android:drawableStart="@drawable/phone"
+                    android:ems="10"
+                    android:fontFamily="@font/fredokaoneregular"
                     android:inputType="phone"
-                    android:textSize="18sp"/>
+                    android:textColor="@color/colorText"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textViewName"
