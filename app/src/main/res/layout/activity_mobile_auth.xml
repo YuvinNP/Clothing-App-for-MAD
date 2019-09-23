@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.clothing_app_mad.ResetPassword"
+    android:orientation="vertical"
+    android:background="@drawable/formback">
+
+    <Button
+        android:id="@+id/rBackBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/backbutton"
+        android:drawableStart="@drawable/backarrow"
+        android:paddingStart="15dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="200dp"
+        android:text="@string/resetPassword"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        app:fontFamily="@font/manjariregular" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:fontFamily="@font/fredokaoneregular"
+            android:text="@string/contact"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/mobileno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/buttonverify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:background="@color/GradientBlue"
+            android:fontFamily="@font/fredokaoneregular"
+            android:text="Send Verification Code"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:fontFamily="@font/fredokaoneregular"
+            android:text="Verification Code"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/verifycode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="50dp"
+            android:ems="10"
+            android:inputType="phone"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/buttonconfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:background="@color/GradientBlue"
+            android:fontFamily="@font/fredokaoneregular"
+            android:text="Confirm"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
