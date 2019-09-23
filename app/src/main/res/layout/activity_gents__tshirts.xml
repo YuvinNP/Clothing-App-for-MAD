@@ -5,14 +5,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/formback"
     tools:context=".Gents.Gents_TShirts">
+
+    <TextView
+        android:id="@+id/GTShirtstxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Gents' T-Shirts"
+        android:textColor="@android:color/white"
+        android:textSize="27dp"
+        android:layout_centerHorizontal="true"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_Menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical">
-
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        android:scrollbars="vertical"
+        android:layout_below="@+id/GTShirtstxt">
     </androidx.recyclerview.widget.RecyclerView>
+
 
 </RelativeLayout>

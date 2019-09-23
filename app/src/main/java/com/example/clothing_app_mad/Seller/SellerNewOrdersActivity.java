@@ -67,7 +67,7 @@ public class SellerNewOrdersActivity extends AppCompatActivity {
                             {
                                 String uID = getRef(position).getKey();
 
-                                Intent intent = new Intent(SellerNewOrdersActivity.this, Seller_User_Product_Activity.class);
+                                Intent intent = new Intent(SellerNewOrdersActivity.this, Seller_User_order_Product_Activity.class);
                                 intent.putExtra("uid", uID);
                                 startActivity(intent);
 

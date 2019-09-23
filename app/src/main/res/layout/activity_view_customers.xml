@@ -6,36 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".CartActivity">
 
-    <RelativeLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/customer_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rLayout1"
+        android:layout_above="@+id/nextBtn">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Search"/>
-        <EditText
-            android:id="@+id/searchfield"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    </androidx.recyclerview.widget.RecyclerView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/searchfield">
 
-            <androidx.recyclerview.widget.RecyclerView
-
-                android:id="@+id/customer_list"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@+id/nextBtn"
-                android:layout_below="@+id/rLayout1">
-
-            </androidx.recyclerview.widget.RecyclerView>
-        </RelativeLayout>
     </RelativeLayout>
-
-
-</RelativeLayout>
 

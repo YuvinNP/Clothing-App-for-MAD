@@ -1,14 +1,19 @@
 package com.example.clothing_app_mad.Seller;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.clothing_app_mad.All_items;
 import com.example.clothing_app_mad.Ladies.Ladies_Dresses;
+import com.example.clothing_app_mad.Ladies.Ladies_Skirts;
 import com.example.clothing_app_mad.MainActivity;
 import com.example.clothing_app_mad.NavDrawer;
 import com.example.clothing_app_mad.Prevalent.Prevalent;
@@ -69,15 +74,13 @@ public class SellerCategoryActivity extends AppCompatActivity {
         } );
 
         updateBtn.setOnClickListener( new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
-                //change
-
-
-               Intent intent = new Intent( SellerCategoryActivity.this, NavDrawer.class );
-                intent.putExtra("Seller", "Seller");
+                Intent intent = new Intent( SellerCategoryActivity.this, Seller_Product_View_Activity.class );
                 startActivity( intent );
+
             }
         } );
 
@@ -202,4 +205,5 @@ public class SellerCategoryActivity extends AppCompatActivity {
             }
         });
     }
+
 }

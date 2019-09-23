@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/category_container"
     tools:context="com.example.clothing_app_mad.Seller.SellerCategoryActivity">
 
 
@@ -31,7 +32,7 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/manjariregular"
                 android:text="Add New Products"
-                android:textColor="@android:color/white"
+                android:textColor="@color/colorText"
                 android:textSize="28dp" />
 
         </RelativeLayout>
@@ -41,11 +42,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_weight="9"
+            android:layout_weight="9.5"
             android:alignmentMode="alignMargins"
             android:columnCount="3"
             android:columnOrderPreserved="false"
-            android:padding="5dp"
+            android:padding="1dp"
             android:rowCount="4">
 
             <!-- row 1 column 1-->
@@ -74,6 +75,7 @@
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/d1" />
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- row 1 column 2-->

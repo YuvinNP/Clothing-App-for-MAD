@@ -19,7 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 //to display the order products by a customer
-public class Seller_User_Product_Activity extends AppCompatActivity {
+public class Seller_User_order_Product_Activity extends AppCompatActivity {
 
     //recyclerview in activity_seller__user__product_
     private RecyclerView productList;

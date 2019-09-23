@@ -8,12 +8,25 @@
     android:background="@drawable/formback"
     tools:context=".Kids.Boys_Kid_Items">
 
+    <TextView
+        android:id="@+id/BKidtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Boys' Kid Items"
+        android:textColor="@android:color/white"
+        android:textSize="27dp"
+        android:layout_centerHorizontal="true"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_Menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical">
-
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        android:scrollbars="vertical"
+        android:layout_below="@+id/BKidtxt">
     </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

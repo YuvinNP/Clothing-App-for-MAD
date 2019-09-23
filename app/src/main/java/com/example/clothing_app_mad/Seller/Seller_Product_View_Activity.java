@@ -1,4 +1,4 @@
-package com.example.clothing_app_mad.Ladies;
+package com.example.clothing_app_mad.Seller;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,51 +12,47 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.clothing_app_mad.Entites.Product;
-import com.example.clothing_app_mad.Prevalent.Prevalent;
-import com.example.clothing_app_mad.ProductDetailsActivity;
+import com.example.clothing_app_mad.Ladies.Ladies_Dresses;
 import com.example.clothing_app_mad.R;
-import com.example.clothing_app_mad.Seller.SellerMaintainProductsActivity;
 import com.example.clothing_app_mad.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
-public class Ladies_Skirts extends AppCompatActivity {
+public class Seller_Product_View_Activity extends AppCompatActivity {
 
-
-    Query query;
-   /* private DatabaseReference productRef;*/
+    private DatabaseReference productRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_ladies__skirts );
+        setContentView( R.layout.activity_seller__product__view_ );
 
-        query = FirebaseDatabase.getInstance().getReference("Product").orderByChild("category").equalTo("WomenSkirts");
+        productRef = FirebaseDatabase.getInstance().getReference().child( "Product" );
 
         recyclerView = findViewById(R.id.recycler_Menu);
         recyclerView.setHasFixedSize( true );
         layoutManager = new LinearLayoutManager( this );
-        recyclerView.setLayoutManager( layoutManager );
+        recyclerView.setLayoutManager( layoutManager);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
+
         FirebaseRecyclerOptions<Product> options =
-                new FirebaseRecyclerOptions.Builder<Product>().setQuery( query, Product.class)
-                        .build();
+                new FirebaseRecyclerOptions.Builder<Product>().setQuery( productRef, Product.class).build();
 
         FirebaseRecyclerAdapter<Product, ProductViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Product, ProductViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int i, @NonNull final Product product) {
+                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Product product) {
 
                         holder.txtProductName.setText( product.getPname() );
                         holder.txtProductPrice.setText( product.getPrice() );
@@ -67,23 +63,11 @@ public class Ladies_Skirts extends AppCompatActivity {
                             @Override
                             public void onClick(View view) {
 
-                                //if it is seller, seller direct to update details
-                                if (Prevalent.currentOnlineUser == null){
-
-                                    Intent intent = new Intent(Ladies_Skirts.this, SellerMaintainProductsActivity.class);
-                                    intent.putExtra("pid", product.getPid());
-                                    startActivity(intent);
-                                }
-                                //if it is customer, customer direct to product details activity
-                                else{
-                                    Intent intent = new Intent(Ladies_Skirts.this, ProductDetailsActivity.class);
-                                    intent.putExtra("pid", product.getPid());
-                                    startActivity(intent);
-                                }
-
+                                Intent intent = new Intent( Seller_Product_View_Activity.this, SellerMaintainProductsActivity.class);
+                                intent.putExtra("pid", product.getPid());
+                                startActivity(intent);
                             }
                         } );
-
                     }
 
                     @NonNull
@@ -96,8 +80,7 @@ public class Ladies_Skirts extends AppCompatActivity {
                         return holder;
                     }
                 };
-
-        recyclerView.setAdapter( adapter );
-        adapter.startListening();
+            recyclerView.setAdapter( adapter );
+            adapter.startListening();
     }
 }

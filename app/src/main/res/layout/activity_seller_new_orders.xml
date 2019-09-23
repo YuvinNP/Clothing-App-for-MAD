@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/formback"
     tools:context=".Seller.SellerNewOrdersActivity">
 
     <RelativeLayout
         android:id="@+id/order_rLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/GradientBlue"
         android:layout_alignParentTop="true">
 
         <TextView
@@ -30,6 +30,9 @@
         android:id="@+id/order_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/order_rLayout">
     </androidx.recyclerview.widget.RecyclerView>
 

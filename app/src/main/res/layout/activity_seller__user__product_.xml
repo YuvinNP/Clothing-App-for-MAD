@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Seller.Seller_User_Product_Activity">
+    android:background="@drawable/formback"
+    tools:context=".Seller.Seller_User_order_Product_Activity">
 
     <RelativeLayout
         android:id="@+id/orderProducts_rLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/GradientBlue"
         android:layout_alignParentTop="true">
 
         <TextView
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Order Products"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorText"
             android:textSize="25dp"
             android:textAlignment="center"
             android:layout_marginTop="10dp"
@@ -30,6 +30,9 @@
         android:id="@+id/orderProducts_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/orderProducts_rLayout">
     </androidx.recyclerview.widget.RecyclerView>
 

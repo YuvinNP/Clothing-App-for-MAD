@@ -32,7 +32,7 @@ public class Ladies_Dresses extends AppCompatActivity {
 
 
     //to preview updated products by seller
-    private String type = "";
+    //private String type = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +41,13 @@ public class Ladies_Dresses extends AppCompatActivity {
 
 
         //validation to check whether login person is the seller
-        Intent intent = getIntent();
+      /*  Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
         if (bundle != null)
         {
             type = getIntent().getExtras().get("Seller").toString();
-        }
+        }*/
 
 
 
@@ -85,20 +85,18 @@ public class Ladies_Dresses extends AppCompatActivity {
                             public void onClick(View view) {
 
                                 //if it is seller, seller direct to update details
-                                if (Prevalent.currentOnlineUser == null){
+                                /*if (Prevalent.currentOnlineUser == null){
 
                                     Intent intent = new Intent(Ladies_Dresses.this, SellerMaintainProductsActivity.class);
                                     intent.putExtra("pid", product.getPid());
                                     startActivity(intent);
-                                }
+                                }*/
                                 //if it is customer, customer direct to product details activity
-                                else{
+                                //else{
                                     Intent intent = new Intent(Ladies_Dresses.this, ProductDetailsActivity.class);
                                     intent.putExtra("pid", product.getPid());
                                     startActivity(intent);
-                                }
-
-
+                                //}
                             }
                         } );
 

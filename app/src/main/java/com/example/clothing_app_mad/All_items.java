@@ -16,6 +16,9 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.clothing_app_mad.Entites.Product;
+import com.example.clothing_app_mad.Ladies.Ladies_Dresses;
+import com.example.clothing_app_mad.Prevalent.Prevalent;
+import com.example.clothing_app_mad.Seller.SellerMaintainProductsActivity;
 import com.example.clothing_app_mad.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -80,9 +83,24 @@ public class All_items extends Fragment {
                     @Override
                     public void onClick(View view) {
 
+                        //if it is seller, seller direct to update details
+                        if (Prevalent.currentOnlineUser == null){
+                            Intent intent = new Intent(getActivity(), SellerMaintainProductsActivity.class);
+                            intent.putExtra("pid", product.getPid());
+                            startActivity(intent);
+                        }
+                        //if it is customer, customer direct to product details activity
+                        else{
+                            Intent intent = new Intent(getActivity(), ProductDetailsActivity.class);
+                            intent.putExtra("pid", product.getPid());
+                            startActivity(intent);
+                        }
+
+
+                      /*
                         Intent intent = new Intent(getActivity(), ProductDetailsActivity.class);
                         intent.putExtra("pid", product.getPid());
-                        startActivity(intent);
+                        startActivity(intent);*/
                     }
                 } );
             }

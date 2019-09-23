@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/formback"
     tools:context=".Seller.SellerAddNewProductActivity">
 
     <ScrollView
@@ -22,6 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
         android:text="Add New Product"
+        android:textColor="@android:color/background_light"
         android:textAlignment="center"
         android:textSize="28sp"
         android:textStyle="bold"/>
@@ -35,7 +37,7 @@
         android:layout_marginTop="50dp"
         android:cropToPadding="false"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/ic_camera" />
+        app:srcCompat="@drawable/ic_camera"/>
 
     <EditText
         android:id="@+id/productName"
@@ -78,9 +80,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Product"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        android:textSize="18dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
+        android:background="@color/GradientBlue"
         android:padding="17dp"
         android:layout_below="@+id/productPrice"
         />
