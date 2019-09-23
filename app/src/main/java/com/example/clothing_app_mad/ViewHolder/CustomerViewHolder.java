@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.clothing_app_mad.Interface.ItemClickListner;
 import com.example.clothing_app_mad.R;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class CustomerViewHolder  extends RecyclerView.ViewHolder{
 
     public TextView cname, email;
-    public ImageView imageView;
+    public CircleImageView imageView;
     public Button delete;
     public ItemClickListner listner;
 

@@ -14,76 +14,62 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.clothing_app_mad.Entites.Customer;
-import com.example.clothing_app_mad.Entites.Product;
-import com.example.clothing_app_mad.Prevalent.Prevalent;
-import com.example.clothing_app_mad.ViewHolder.CustomerViewHolder;
-import com.example.clothing_app_mad.ViewHolder.ProductViewHolder;
+import com.example.clothing_app_mad.Entites.Feedback;
+import com.example.clothing_app_mad.ViewHolder.FeedbackHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
-
-public class ViewCustomers extends AppCompatActivity {
+public class ViewFeedbacks extends AppCompatActivity {
 
 
-    private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
-    private Button delete;
-    private DatabaseReference dbref;
+   private Button delete;
+   private RecyclerView recyclerView;
+   private DatabaseReference dbref;
+   private RecyclerView.LayoutManager layoutManager;
     ProgressDialog progressDialog;
-    private EditText search;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
-        setContentView (R.layout.activity_view_customers);
+        setContentView (R.layout.activity_view_feedbacks);
 
-        search = findViewById (R.id.searchfield);
-        recyclerView = findViewById (R.id.customer_list);
+        delete = findViewById (R.id.deletebtn);
+        recyclerView = findViewById (R.id.feedback_list);
         recyclerView.setHasFixedSize (true);
         layoutManager = new LinearLayoutManager (this);
         recyclerView.setLayoutManager (layoutManager);
+        dbref = FirebaseDatabase.getInstance ().getReference ().child ("AddFeedback");
 
-        dbref = FirebaseDatabase.getInstance ().getReference ().child ("Customer");
+        progressDialog = new ProgressDialog (ViewFeedbacks.this);
 
-
-        progressDialog = new ProgressDialog (this);
-
-        search.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View view) {
-                usersearch();
-            }
-        });
     }
 
     @Override
     protected void onStart() {
         super.onStart ();
 
-        FirebaseRecyclerOptions<Customer> options =
-                new FirebaseRecyclerOptions.Builder<Customer> ()
-                        .setQuery (dbref, Customer.class).build ();
+        FirebaseRecyclerOptions<Feedback> options =
+                new FirebaseRecyclerOptions.Builder<Feedback> ()
+                        .setQuery (dbref, Feedback.class).build ();
 
-        FirebaseRecyclerAdapter<Customer, CustomerViewHolder> adapter = new FirebaseRecyclerAdapter<Customer, CustomerViewHolder> (options) {
+        FirebaseRecyclerAdapter<Feedback, FeedbackHolder> adapter = new FirebaseRecyclerAdapter<Feedback, FeedbackHolder> (options) {
             @Override
-            protected void onBindViewHolder(@NonNull CustomerViewHolder customerViewHolder, final int position, @NonNull Customer customer) {
-                customerViewHolder.cname.setText (customer.getCname ());
-                customerViewHolder.email.setText (customer.getEmail ());
-                Picasso.get ().load (customer.getImage ()).into (customerViewHolder.imageView);
+            protected void onBindViewHolder(@NonNull FeedbackHolder FeedbackHolder, final int position, @NonNull Feedback feedback) {
+                FeedbackHolder.cname.setText (feedback.getCustname ());
+                FeedbackHolder.description.setText (feedback.getDescription ());
+                FeedbackHolder.ratingbar.setNumStars (feedback.getRating ());
 
-                customerViewHolder.delete.setOnClickListener (new View.OnClickListener () {
+
+                FeedbackHolder.delBtn.setOnClickListener (new View.OnClickListener () {
                     @Override
                     public void onClick(View view) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder (ViewCustomers.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder (ViewFeedbacks.this);
 
                         builder.setMessage ("Are you sure to update?")
                                 .setPositiveButton ("Yes", new DialogInterface.OnClickListener () {
@@ -100,9 +86,9 @@ public class ViewCustomers extends AppCompatActivity {
                                         RemoveCustomer (uID);
                                         progressDialog.dismiss ();
 
-                                        Toast.makeText (ViewCustomers.this, "Successfully Deleted", Toast.LENGTH_SHORT).show ();
+                                        Toast.makeText (ViewFeedbacks.this, "Successfully Deleted", Toast.LENGTH_SHORT).show ();
 
-                                        startActivity (new Intent (ViewCustomers.this, ViewCustomers.class));
+                                        startActivity (new Intent (ViewFeedbacks.this, ViewFeedbacks.class));
                                     }
                                 }).setNegativeButton ("Cancel", null);
 
@@ -116,9 +102,9 @@ public class ViewCustomers extends AppCompatActivity {
 
             @NonNull
             @Override
-            public CustomerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from (parent.getContext ()).inflate (R.layout.customer_components, parent, false);
-                CustomerViewHolder holder = new CustomerViewHolder (view);
+            public FeedbackHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from (parent.getContext ()).inflate (R.layout.feeback_layout, parent, false);
+                FeedbackHolder holder = new FeedbackHolder (view);
                 return holder;
             }
         };
@@ -133,9 +119,4 @@ public class ViewCustomers extends AppCompatActivity {
         dbref.child (uID).removeValue ();
     }
 
-    private void usersearch() {
-
-
-
-    }
 }

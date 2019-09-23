@@ -238,7 +238,13 @@ public class NavDrawer extends AppCompatActivity
         }
         else if (id == R.id.nav_notification)
         {
-
+//            Intent intent = new Intent(NavDrawer.this, AddFeedback.class);
+//            startActivity(intent);
+        }
+        else if (id == R.id.nav_feedback)
+        {
+            Intent intent = new Intent(NavDrawer.this, AddFeedback.class);
+            startActivity(intent);
         }
         else if (id == R.id.nav_setting)
         {
